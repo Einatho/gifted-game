@@ -188,6 +188,9 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
 ];
 
+// All levels unlocked by default
+const ALL_LEVELS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 // Initial User Progress
 export const INITIAL_PROGRESS = {
   totalPoints: 0,
@@ -195,10 +198,10 @@ export const INITIAL_PROGRESS = {
   questionsAnswered: 0,
   correctAnswers: 0,
   categoryProgress: {
-    math: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: [1] },
-    verbal: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: [1] },
-    visual: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: [1] },
-    logic: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: [1] },
+    math: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: ALL_LEVELS },
+    verbal: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: ALL_LEVELS },
+    visual: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: ALL_LEVELS },
+    logic: { currentLevel: 1, questionsCompleted: 0, correctAnswers: 0, bestScore: 0, starsEarned: 0, unlockedLevels: ALL_LEVELS },
   },
   achievements: [],
   dailyChallengeStreak: 0,

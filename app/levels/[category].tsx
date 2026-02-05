@@ -22,7 +22,8 @@ function LevelCard({
   const info = CATEGORY_INFO[category];
   const config = LEVEL_CONFIGS[level - 1];
   
-  const isUnlocked = progress.unlockedLevels.includes(level);
+  // All levels are always unlocked
+  const isUnlocked = true;
   const isCompleted = progress.currentLevel > level;
   const isCurrent = progress.currentLevel === level;
 
@@ -86,13 +87,10 @@ function LevelCard({
             {config.difficulty === 'easy' ? 'קל' : config.difficulty === 'medium' ? 'בינוני' : 'קשה'}
           </Text>
 
-          {/* Stars Required */}
-          {!isUnlocked && (
-            <View className="flex-row items-center mt-1">
-              <Text className="text-xs text-slate-400 mr-1">{config.requiredStars}</Text>
-              <Ionicons name="star" size={10} color="#fbbf24" />
-            </View>
-          )}
+          {/* Questions count */}
+          <Text className="text-xs text-slate-400 mt-1">
+            {config.questionsCount} שאלות
+          </Text>
         </View>
       </TouchableOpacity>
     </Animated.View>
@@ -217,8 +215,8 @@ export default function LevelsScreen() {
               <Text className="text-amber-800 font-bold text-right flex-1 mr-2">טיפ</Text>
             </View>
             <Text className="text-amber-700 text-right text-sm">
-              כדי לפתוח שלבים חדשים, צריך לאסוף מספיק כוכבים. 
               נסה לענות מהר כדי לקבל 3 כוכבים על כל שאלה!
+              ככל שהשלב גבוה יותר, השאלות קשות יותר.
             </Text>
           </View>
         </Animated.View>
