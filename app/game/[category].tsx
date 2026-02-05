@@ -1,10 +1,24 @@
 import { useEffect, useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, BackHandler } from 'react-native';
+import { View, Text, TouchableOpacity, BackHandler, Platform } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useGameStore } from '@/stores/gameStore';
+
+// Safe haptics helper for web compatibility
+const triggerHaptic = async (type: 'success' | 'error') => {
+  if (Platform.OS === 'web') return;
+  try {
+    if (type === 'success') {
+      await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    } else {
+      await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+    }
+  } catch (e) {
+    // Haptics not available
+  }
+};
 import { CATEGORY_INFO, LEVEL_CONFIGS } from '@/utils/constants';
 import { QuestionCategory, Question } from '@/utils/types';
 import { getQuestionsForLevel } from '@/utils/questionLoader';
@@ -89,12 +103,8 @@ export default function GameScreen() {
     setLastResult({ isCorrect: result.isCorrect, stars: result.starsEarned });
     setShowFeedback(true);
     
-    // Haptic feedback
-    if (result.isCorrect) {
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-    } else {
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-    }
+    // Haptic feedback (safe for web)
+    triggerHaptic(result.isCorrect ? 'success' : 'error');
 
     // Animate feedback
     feedbackScale.value = withSequence(

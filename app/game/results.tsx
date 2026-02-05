@@ -1,11 +1,21 @@
 import { useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import { useGameStore } from '@/stores/gameStore';
+
+// Safe haptics helper for web compatibility
+const triggerHaptic = async () => {
+  if (Platform.OS === 'web') return;
+  try {
+    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+  } catch (e) {
+    // Haptics not available
+  }
+};
 import { CATEGORY_INFO } from '@/utils/constants';
 import Animated, { 
   FadeInDown, 
@@ -59,8 +69,8 @@ export default function ResultsScreen() {
   }));
 
   useEffect(() => {
-    // Celebration haptic
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    // Celebration haptic (safe for web)
+    triggerHaptic();
     
     // Pulse animation for score
     pulseScale.value = withRepeat(
