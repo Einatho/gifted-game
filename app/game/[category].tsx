@@ -5,6 +5,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useGameStore } from '@/stores/gameStore';
+import { CATEGORY_INFO, LEVEL_CONFIGS } from '@/utils/constants';
+import { QuestionCategory } from '@/utils/types';
+import { getQuestionsForLevel } from '@/utils/questionLoader';
+import MathQuestion from '@/components/questions/MathQuestion';
+import VerbalQuestion from '@/components/questions/VerbalQuestion';
+import VisualQuestion from '@/components/questions/VisualQuestion';
+import LogicQuestion from '@/components/questions/LogicQuestion';
+import Timer from '@/components/game/Timer';
 
 // Safe haptics helper for web compatibility
 const triggerHaptic = async (type: 'success' | 'error') => {
@@ -19,24 +27,6 @@ const triggerHaptic = async (type: 'success' | 'error') => {
     // Haptics not available
   }
 };
-import { CATEGORY_INFO, LEVEL_CONFIGS } from '@/utils/constants';
-import { QuestionCategory, Question } from '@/utils/types';
-import { getQuestionsForLevel } from '@/utils/questionLoader';
-import MathQuestion from '@/components/questions/MathQuestion';
-import VerbalQuestion from '@/components/questions/VerbalQuestion';
-import VisualQuestion from '@/components/questions/VisualQuestion';
-import LogicQuestion from '@/components/questions/LogicQuestion';
-import Timer from '@/components/game/Timer';
-import Animated, { 
-  FadeIn, 
-  FadeOut, 
-  SlideInRight, 
-  SlideOutLeft,
-  useSharedValue,
-  useAnimatedStyle,
-  withSpring,
-  withSequence,
-} from 'react-native-reanimated';
 
 export default function GameScreen() {
   const router = useRouter();
@@ -61,13 +51,6 @@ export default function GameScreen() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastResult, setLastResult] = useState<{ isCorrect: boolean; stars: number } | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-
-  const scale = useSharedValue(1);
-  const feedbackScale = useSharedValue(0);
-
-  const animatedFeedbackStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: feedbackScale.value }],
-  }));
 
   // Initialize game
   useEffect(() => {
@@ -106,17 +89,10 @@ export default function GameScreen() {
     // Haptic feedback (safe for web)
     triggerHaptic(result.isCorrect ? 'success' : 'error');
 
-    // Animate feedback
-    feedbackScale.value = withSequence(
-      withSpring(1.2),
-      withSpring(1)
-    );
-
     // Move to next question after delay
     setTimeout(() => {
       setShowFeedback(false);
       setLastResult(null);
-      feedbackScale.value = 0;
       nextQuestion();
       setQuestionStartTime(Date.now());
     }, 1500);
@@ -218,7 +194,7 @@ export default function GameScreen() {
             {currentQuestionIndex + 1}/{currentQuestions.length}
           </Text>
           <View className="flex-1 h-2 bg-slate-200 rounded-full mx-3 overflow-hidden">
-            <Animated.View 
+            <View 
               className="h-full rounded-full"
               style={{ 
                 backgroundColor: info.color,
@@ -253,26 +229,18 @@ export default function GameScreen() {
 
       {/* Question Area */}
       <View className="flex-1 px-6">
-        <Animated.View
-          key={currentQuestionIndex}
-          entering={SlideInRight.springify()}
-          exiting={SlideOutLeft}
-          className="flex-1"
-        >
+        <View key={currentQuestionIndex} className="flex-1">
           {renderQuestion()}
-        </Animated.View>
+        </View>
       </View>
 
       {/* Feedback Overlay */}
       {showFeedback && lastResult && (
-        <Animated.View 
-          entering={FadeIn}
-          exiting={FadeOut}
+        <View 
           className="absolute inset-0 items-center justify-center"
           style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}
         >
-          <Animated.View 
-            style={animatedFeedbackStyle}
+          <View 
             className={`w-32 h-32 rounded-full items-center justify-center ${
               lastResult.isCorrect ? 'bg-green-500' : 'bg-red-500'
             }`}
@@ -289,10 +257,9 @@ export default function GameScreen() {
                 ))}
               </View>
             )}
-          </Animated.View>
-        </Animated.View>
+          </View>
+        </View>
       )}
     </SafeAreaView>
   );
 }
-

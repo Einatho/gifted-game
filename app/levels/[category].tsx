@@ -6,16 +6,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useGameStore } from '@/stores/gameStore';
 import { CATEGORY_INFO, LEVEL_CONFIGS } from '@/utils/constants';
 import { QuestionCategory } from '@/utils/types';
-import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 
 function LevelCard({ 
   level, 
   category, 
-  index 
 }: { 
   level: number; 
   category: QuestionCategory; 
-  index: number;
 }) {
   const router = useRouter();
   const progress = useGameStore((state) => state.progress.categoryProgress[category]);
@@ -34,10 +31,7 @@ function LevelCard({
   };
 
   return (
-    <Animated.View
-      entering={FadeInDown.delay(index * 50).springify()}
-      className="w-[30%] mb-4"
-    >
+    <View className="w-[30%] mb-4">
       <TouchableOpacity
         onPress={handlePress}
         disabled={!isUnlocked}
@@ -66,24 +60,22 @@ function LevelCard({
                     ? 'bg-slate-200'
                     : 'bg-slate-300'
             }`}
-            style={isCurrent ? { backgroundColor: info.color } : {}}
+            style={isCurrent ? { backgroundColor: info.color } : isUnlocked && !isCompleted ? { backgroundColor: info.color } : {}}
           >
             {isCompleted ? (
               <Ionicons name="checkmark" size={24} color="white" />
-            ) : isUnlocked ? (
-              <Text className="text-white text-lg font-bold">{level}</Text>
             ) : (
-              <Ionicons name="lock-closed" size={20} color="#94a3b8" />
+              <Text className="text-white text-lg font-bold">{level}</Text>
             )}
           </View>
 
           {/* Level Info */}
-          <Text className={`text-sm font-bold ${isUnlocked ? 'text-slate-800' : 'text-slate-400'}`}>
+          <Text className="text-sm font-bold text-slate-800">
             שלב {level}
           </Text>
           
           {/* Difficulty */}
-          <Text className={`text-xs ${isUnlocked ? 'text-slate-500' : 'text-slate-400'}`}>
+          <Text className="text-xs text-slate-500">
             {config.difficulty === 'easy' ? 'קל' : config.difficulty === 'medium' ? 'בינוני' : 'קשה'}
           </Text>
 
@@ -93,7 +85,7 @@ function LevelCard({
           </Text>
         </View>
       </TouchableOpacity>
-    </Animated.View>
+    </View>
   );
 }
 
@@ -125,10 +117,7 @@ export default function LevelsScreen() {
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
       {/* Header */}
-      <Animated.View 
-        entering={FadeInUp.springify()}
-        className="px-6 pt-4 pb-2"
-      >
+      <View className="px-6 pt-4 pb-2">
         <TouchableOpacity
           onPress={() => router.back()}
           className="flex-row items-center mb-4"
@@ -136,7 +125,7 @@ export default function LevelsScreen() {
           <Text className="text-primary-500 mr-1">חזרה</Text>
           <Ionicons name="chevron-forward" size={20} color="#0ea5e9" />
         </TouchableOpacity>
-      </Animated.View>
+      </View>
 
       <ScrollView 
         className="flex-1" 
@@ -144,10 +133,7 @@ export default function LevelsScreen() {
         showsVerticalScrollIndicator={false}
       >
         {/* Category Header */}
-        <Animated.View
-          entering={FadeInDown.delay(100).springify()}
-          className="mx-6 mb-6"
-        >
+        <View className="mx-6 mb-6">
           <LinearGradient
             colors={gradients[category]}
             start={{ x: 0, y: 0 }}
@@ -184,7 +170,7 @@ export default function LevelsScreen() {
               </View>
             </View>
           </LinearGradient>
-        </Animated.View>
+        </View>
 
         {/* Levels Grid */}
         <View className="px-6">
@@ -193,22 +179,18 @@ export default function LevelsScreen() {
           </Text>
           
           <View className="flex-row flex-wrap justify-between">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((level, index) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((level) => (
               <LevelCard 
                 key={level} 
                 level={level} 
                 category={category}
-                index={index}
               />
             ))}
           </View>
         </View>
 
         {/* Tips */}
-        <Animated.View
-          entering={FadeInDown.delay(600).springify()}
-          className="mx-6 mt-4"
-        >
+        <View className="mx-6 mt-4">
           <View className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
             <View className="flex-row items-center mb-2">
               <Ionicons name="bulb" size={20} color="#f59e0b" />
@@ -219,9 +201,8 @@ export default function LevelsScreen() {
               ככל שהשלב גבוה יותר, השאלות קשות יותר.
             </Text>
           </View>
-        </Animated.View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
