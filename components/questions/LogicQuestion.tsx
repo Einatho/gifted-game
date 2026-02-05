@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LogicQuestion as LogicQuestionType } from '@/utils/types';
-import Animated, { FadeInDown } from 'react-native-reanimated';
 
 type LogicQuestionProps = {
   question: LogicQuestionType;
@@ -13,49 +12,20 @@ export default function LogicQuestion({ question, onAnswer, disabled }: LogicQue
   return (
     <View className="flex-1">
       {/* Question Text */}
-      <View className="mb-4">
+      <View className="bg-white rounded-2xl p-5 mb-4" style={{ elevation: 4 }}>
+        <View className="flex-row items-center mb-3">
+          <Text className="text-emerald-700 font-bold text-right flex-1">שאלה:</Text>
+          <Ionicons name="bulb" size={20} color="#10b981" />
+        </View>
         <Text className="text-xl font-bold text-slate-800 text-right leading-8">
           {question.questionText}
         </Text>
       </View>
 
-      {/* Statements Display */}
-      <View className="bg-white rounded-2xl p-5 mb-6" style={{ elevation: 4 }}>
-        <View className="flex-row items-center mb-3">
-          <Text className="text-emerald-700 font-bold text-right flex-1">נתונים:</Text>
-          <Ionicons name="information-circle" size={20} color="#10b981" />
-        </View>
-        
-        {question.statements.map((statement, index) => (
-          <View 
-            key={index} 
-            className="bg-emerald-50 rounded-xl p-3 mb-2 flex-row items-start"
-          >
-            <Text className="text-emerald-800 text-right flex-1 leading-6">
-              {statement}
-            </Text>
-            <View className="w-6 h-6 rounded-full bg-emerald-200 items-center justify-center mr-2">
-              <Text className="text-emerald-700 text-xs font-bold">{index + 1}</Text>
-            </View>
-          </View>
-        ))}
-      </View>
-
-      {/* Question Prompt */}
-      <View className="bg-amber-50 rounded-xl p-3 mb-4 flex-row items-center">
-        <Ionicons name="help-circle" size={20} color="#f59e0b" />
-        <Text className="text-amber-800 font-medium text-right flex-1 mr-2">
-          מה נכון לומר?
-        </Text>
-      </View>
-
       {/* Options */}
-      <View className="space-y-3">
+      <View>
         {question.options.map((option, index) => (
-          <Animated.View
-            key={index}
-            entering={FadeInDown.delay(index * 100).springify()}
-          >
+          <View key={index} className="mb-3">
             <TouchableOpacity
               onPress={() => onAnswer(index)}
               disabled={disabled}
@@ -67,17 +37,16 @@ export default function LogicQuestion({ question, onAnswer, disabled }: LogicQue
                 <Text className="text-lg text-slate-800 text-right flex-1 mr-3 leading-6">
                   {option}
                 </Text>
-                <View className="w-10 h-10 rounded-full bg-slate-100 items-center justify-center">
-                  <Text className="text-slate-600 font-bold">
+                <View className="w-10 h-10 rounded-full bg-emerald-100 items-center justify-center">
+                  <Text className="text-emerald-700 font-bold">
                     {String.fromCharCode(1488 + index)}
                   </Text>
                 </View>
               </View>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         ))}
       </View>
     </View>
   );
 }
-

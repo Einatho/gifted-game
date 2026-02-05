@@ -24,7 +24,7 @@ export interface VerbalQuestion extends BaseQuestion {
   category: 'verbal';
   type: 'analogy' | 'category' | 'opposite' | 'similar';
   questionText: string;
-  pair1: [string, string];
+  pair: [string, string];
   options: [string, string][];
   correctAnswer: number;
 }
@@ -40,9 +40,9 @@ export interface VisualQuestion extends BaseQuestion {
 
 export interface LogicQuestion extends BaseQuestion {
   category: 'logic';
-  type: 'deduction' | 'if_then' | 'set_membership';
+  type: 'deduction' | 'if_then' | 'set_membership' | 'ordering' | 'puzzle';
   questionText: string;
-  statements: string[];
+  statements?: string[];
   options: string[];
   correctAnswer: number;
 }

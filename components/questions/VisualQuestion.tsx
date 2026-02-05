@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { VisualQuestion as VisualQuestionType, Shape } from '@/utils/types';
-import Animated, { FadeInDown } from 'react-native-reanimated';
 import Svg, { Circle, Rect, Polygon, Path } from 'react-native-svg';
 
 type VisualQuestionProps = {
@@ -168,11 +167,7 @@ export default function VisualQuestion({ question, onAnswer, disabled }: VisualQ
       {/* Options */}
       <View className="flex-row flex-wrap justify-between">
         {question.options.map((optionShapes, index) => (
-          <Animated.View
-            key={index}
-            entering={FadeInDown.delay(index * 100).springify()}
-            className="w-[48%] mb-3"
-          >
+          <View key={index} className="w-[48%] mb-3">
             <TouchableOpacity
               onPress={() => onAnswer(index)}
               disabled={disabled}
@@ -189,16 +184,15 @@ export default function VisualQuestion({ question, onAnswer, disabled }: VisualQ
                   ))}
                 </View>
               </View>
-              <View className="absolute top-2 right-2 w-6 h-6 rounded-full bg-slate-100 items-center justify-center">
-                <Text className="text-slate-600 text-xs font-bold">
+              <View className="absolute top-2 right-2 w-6 h-6 rounded-full bg-orange-100 items-center justify-center">
+                <Text className="text-orange-700 text-xs font-bold">
                   {String.fromCharCode(1488 + index)}
                 </Text>
               </View>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         ))}
       </View>
     </View>
   );
 }
-

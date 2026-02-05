@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { VerbalQuestion as VerbalQuestionType } from '@/utils/types';
-import Animated, { FadeInDown } from 'react-native-reanimated';
 
 type VerbalQuestionProps = {
   question: VerbalQuestionType;
@@ -23,7 +22,7 @@ export default function VerbalQuestion({ question, onAnswer, disabled }: VerbalQ
       <View className="bg-white rounded-2xl p-5 mb-6" style={{ elevation: 4 }}>
         <View className="flex-row items-center justify-center">
           <View className="bg-purple-100 rounded-xl px-5 py-3">
-            <Text className="text-purple-700 text-xl font-bold">{question.pair1[1]}</Text>
+            <Text className="text-purple-700 text-xl font-bold">{question.pair[1]}</Text>
           </View>
           
           <View className="mx-4">
@@ -31,7 +30,7 @@ export default function VerbalQuestion({ question, onAnswer, disabled }: VerbalQ
           </View>
           
           <View className="bg-purple-100 rounded-xl px-5 py-3">
-            <Text className="text-purple-700 text-xl font-bold">{question.pair1[0]}</Text>
+            <Text className="text-purple-700 text-xl font-bold">{question.pair[0]}</Text>
           </View>
         </View>
 
@@ -55,12 +54,9 @@ export default function VerbalQuestion({ question, onAnswer, disabled }: VerbalQ
       </View>
 
       {/* Options */}
-      <View className="space-y-3">
+      <View>
         {question.options.map((option, index) => (
-          <Animated.View
-            key={index}
-            entering={FadeInDown.delay(index * 100).springify()}
-          >
+          <View key={index} className="mb-3">
             <TouchableOpacity
               onPress={() => onAnswer(index)}
               disabled={disabled}
@@ -74,17 +70,16 @@ export default function VerbalQuestion({ question, onAnswer, disabled }: VerbalQ
                   <Text className="text-slate-400 mx-2">:</Text>
                   <Text className="text-lg text-slate-800">{option[0]}</Text>
                 </View>
-                <View className="w-10 h-10 rounded-full bg-slate-100 items-center justify-center mr-3">
-                  <Text className="text-slate-600 font-bold">
+                <View className="w-10 h-10 rounded-full bg-purple-100 items-center justify-center mr-3">
+                  <Text className="text-purple-700 font-bold">
                     {String.fromCharCode(1488 + index)}
                   </Text>
                 </View>
               </View>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         ))}
       </View>
     </View>
   );
 }
-

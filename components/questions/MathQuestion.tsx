@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { MathQuestion as MathQuestionType } from '@/utils/types';
-import Animated, { FadeInDown } from 'react-native-reanimated';
 
 type MathQuestionProps = {
   question: MathQuestionType;
@@ -45,12 +44,9 @@ export default function MathQuestion({ question, onAnswer, disabled }: MathQuest
       {renderSequence()}
 
       {/* Options */}
-      <View className="space-y-3">
+      <View>
         {question.options.map((option, index) => (
-          <Animated.View
-            key={index}
-            entering={FadeInDown.delay(index * 100).springify()}
-          >
+          <View key={index} className="mb-3">
             <TouchableOpacity
               onPress={() => onAnswer(index)}
               disabled={disabled}
@@ -62,17 +58,16 @@ export default function MathQuestion({ question, onAnswer, disabled }: MathQuest
                 <Text className="text-lg text-slate-800 text-right flex-1 mr-3">
                   {option}
                 </Text>
-                <View className="w-10 h-10 rounded-full bg-slate-100 items-center justify-center">
-                  <Text className="text-slate-600 font-bold">
+                <View className="w-10 h-10 rounded-full bg-blue-100 items-center justify-center">
+                  <Text className="text-blue-700 font-bold">
                     {String.fromCharCode(1488 + index)}
                   </Text>
                 </View>
               </View>
             </TouchableOpacity>
-          </Animated.View>
+          </View>
         ))}
       </View>
     </View>
   );
 }
-
