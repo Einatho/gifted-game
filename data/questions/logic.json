@@ -1,676 +1,323 @@
 [
   {
-    "id": "logic_deduction_001",
+    "id": "logic_easy_001",
     "category": "logic",
     "type": "deduction",
     "difficulty": "easy",
-    "timeLimit": 45,
+    "timeLimit": 50,
     "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל הכלבים נובחים.",
-      "רקסי הוא כלב."
-    ],
-    "options": [
-      "רקסי נובח",
-      "רקסי לא נובח",
-      "רקסי חתול",
-      "לא ניתן לדעת"
-    ],
+    "questionText": "כל הכלבים נובחים. רקס הוא כלב. מה נכון לגבי רקס?",
+    "options": ["רקס נובח", "רקס לא נובח", "רקס מיילל", "אי אפשר לדעת"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_002",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "אם יורד גשם, הרחוב רטוב. יורד גשם. מה נכון?",
+    "options": ["הרחוב רטוב", "הרחוב יבש", "הרחוב נקי", "אי אפשר לדעת"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_003",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "דני גבוה מיוסי. יוסי גבוה מרוני. מי הכי נמוך?",
+    "options": ["רוני", "דני", "יוסי", "כולם שווים"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_004",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "לכל הפרחים בגינה יש עלים ירוקים. השושנה היא פרח בגינה. מה נכון?",
+    "options": ["לשושנה יש עלים ירוקים", "לשושנה יש עלים אדומים", "לשושנה אין עלים", "אי אפשר לדעת"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_005",
+    "category": "logic",
+    "type": "ordering",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "מיכל אוכלת לפני רונית. רונית אוכלת לפני דנה. מי אוכלת ראשונה?",
+    "options": ["מיכל", "רונית", "דנה", "כולן יחד"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_006",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "כל התפוחים טעימים. זה תפוח. האם הוא טעים?",
+    "options": ["כן", "לא", "אולי", "לפעמים"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_007",
+    "category": "logic",
+    "type": "ordering",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "הכדור האדום גדול מהכחול. הכחול גדול מהירוק. מה הכי גדול?",
+    "options": ["האדום", "הכחול", "הירוק", "כולם שווים"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_easy_008",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "easy",
+    "timeLimit": 50,
+    "points": 100,
+    "questionText": "שבת באה אחרי יום שישי. היום יום שישי. מה יהיה מחר?",
+    "options": ["שבת", "ראשון", "חמישי", "שני"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_med_001",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "כל הציפורים עפות. פינגווין הוא ציפור אבל לא עף. מה הבעיה במשפט הראשון?",
+    "options": ["לא כל הציפורים עפות", "פינגווין לא ציפור", "אין בעיה", "פינגווין כן עף"],
     "correctAnswer": 0,
-    "hint": "אם כל הכלבים נובחים, ורקסי הוא כלב..."
+    "hint": "האם המשפט 'כל הציפורים עפות' נכון?"
   },
   {
-    "id": "logic_deduction_002",
+    "id": "logic_med_002",
     "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "דני גבוה מיוסי.",
-      "יוסי גבוה מאבי."
-    ],
-    "options": [
-      "דני גבוה מאבי",
-      "אבי גבוה מדני",
-      "יוסי הכי גבוה",
-      "כולם באותו גובה"
-    ],
-    "correctAnswer": 0,
-    "hint": "סדר אותם לפי גובה"
-  },
-  {
-    "id": "logic_deduction_003",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל התפוחים אדומים.",
-      "יש לי תפוח."
-    ],
-    "options": [
-      "התפוח שלי אדום",
-      "התפוח שלי ירוק",
-      "אין לי תפוח",
-      "לא ניתן לדעת את צבע התפוח"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_004",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "היום יום שני.",
-      "מחר יהיה מבחן."
-    ],
-    "options": [
-      "המבחן ביום שלישי",
-      "המבחן ביום שני",
-      "המבחן ביום ראשון",
-      "אין מבחן"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_005",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "מיכל אוהבת גלידה.",
-      "מיכל לא אוהבת שוקולד."
-    ],
-    "options": [
-      "מיכל תבחר גלידת וניל על פני שוקולד",
-      "מיכל תבחר שוקולד",
-      "מיכל לא אוהבת גלידה",
-      "מיכל אוהבת שוקולד"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_if_then_001",
-    "category": "logic",
-    "type": "if_then",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם יורד גשם, אני לוקח מטריה.",
-      "היום יורד גשם."
-    ],
-    "options": [
-      "אני לוקח מטריה",
-      "אני לא לוקח מטריה",
-      "אין גשם",
-      "לא ניתן לדעת"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_if_then_002",
-    "category": "logic",
-    "type": "if_then",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם יש לי שיעורי בית, אני עושה אותם אחרי הצהריים.",
-      "היום יש לי שיעורי בית."
-    ],
-    "options": [
-      "אני אעשה שיעורי בית אחרי הצהריים",
-      "אני לא אעשה שיעורי בית",
-      "אין לי שיעורי בית",
-      "אני אעשה שיעורי בית בבוקר"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_if_then_003",
-    "category": "logic",
-    "type": "if_then",
+    "type": "ordering",
     "difficulty": "medium",
-    "timeLimit": 40,
+    "timeLimit": 45,
     "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם אני אוכל ירקות, אני מקבל קינוח.",
-      "אני לא אכלתי ירקות."
-    ],
-    "options": [
-      "לא ניתן לדעת אם אקבל קינוח",
-      "אני בטוח אקבל קינוח",
-      "אני בטוח לא אקבל קינוח",
-      "אני אוכל ירקות"
-    ],
-    "correctAnswer": 0,
-    "hint": "האם אפשר לקבל קינוח בדרך אחרת?"
+    "questionText": "א' לפני ב'. ג' אחרי ב'. ד' לפני א'. מה הסדר הנכון?",
+    "options": ["ד', א', ב', ג'", "א', ב', ג', ד'", "ג', ב', א', ד'", "ב', א', ד', ג'"],
+    "correctAnswer": 0
   },
   {
-    "id": "logic_deduction_006",
+    "id": "logic_med_003",
     "category": "logic",
     "type": "deduction",
     "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "רונית גרה בבניין עם 4 קומות.",
-      "רונית לא גרה בקומה הראשונה.",
-      "רונית לא גרה בקומה האחרונה.",
-      "רונית גרה מעל השכנה שלה מירה שגרה בקומה שנייה."
-    ],
-    "options": [
-      "רונית גרה בקומה שלישית",
-      "רונית גרה בקומה שנייה",
-      "רונית גרה בקומה רביעית",
-      "רונית גרה בקומה ראשונה"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_007",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "יש שלושה חברים: אורי, גיל ונועה.",
-      "אורי לובש כחול.",
-      "גיל לא לובש אדום.",
-      "נועה לובשת צבע שונה מאורי וגיל."
-    ],
-    "options": [
-      "גיל לובש ירוק ונועה לובשת אדום",
-      "גיל לובש אדום ונועה לובשת ירוק",
-      "גיל לובש כחול ונועה לובשת אדום",
-      "כולם לובשים כחול"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_008",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "שרה מבוגרת מדינה.",
-      "רותי צעירה משרה.",
-      "דינה מבוגרת מרותי."
-    ],
-    "options": [
-      "שרה הכי מבוגרת",
-      "דינה הכי מבוגרת",
-      "רותי הכי מבוגרת",
-      "כולן באותו גיל"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_set_001",
-    "category": "logic",
-    "type": "set_membership",
-    "difficulty": "easy",
     "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "בקבוצה א' יש רק ילדים שאוהבים כדורגל.",
-      "דני נמצא בקבוצה א'."
-    ],
-    "options": [
-      "דני אוהב כדורגל",
-      "דני לא אוהב כדורגל",
-      "דני לא נמצא בקבוצה א'",
-      "לא ניתן לדעת"
-    ],
+    "points": 150,
+    "questionText": "אם יש שמש, יש חם. אם יש חם, הילדים משחקים בחוץ. יש שמש. מה נכון?",
+    "options": ["הילדים משחקים בחוץ", "הילדים בבית", "יורד גשם", "אי אפשר לדעת"],
     "correctAnswer": 0
   },
   {
-    "id": "logic_set_002",
+    "id": "logic_med_004",
     "category": "logic",
-    "type": "set_membership",
+    "type": "deduction",
     "difficulty": "medium",
-    "timeLimit": 40,
+    "timeLimit": 45,
     "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל מי שאוהב מתמטיקה אוהב גם חידות.",
-      "יובל אוהב חידות."
-    ],
-    "options": [
-      "לא ניתן לדעת אם יובל אוהב מתמטיקה",
-      "יובל בטוח אוהב מתמטיקה",
-      "יובל בטוח לא אוהב מתמטיקה",
-      "יובל לא אוהב חידות"
-    ],
-    "correctAnswer": 0,
-    "hint": "האם כל מי שאוהב חידות בהכרח אוהב מתמטיקה?"
+    "questionText": "רוני גר בין דני לאבי. אבי גר הכי רחוק מהים. מי גר הכי קרוב לים?",
+    "options": ["דני", "רוני", "אבי", "לא ידוע"],
+    "correctAnswer": 0
   },
   {
-    "id": "logic_deduction_009",
+    "id": "logic_med_005",
+    "category": "logic",
+    "type": "ordering",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "שלושה חברים בתור: מי שלובש אדום לפני הכחול, הירוק אחרון. מה הסדר?",
+    "options": ["אדום, כחול, ירוק", "כחול, אדום, ירוק", "ירוק, אדום, כחול", "אדום, ירוק, כחול"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_med_006",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "כל מי שלומד מצליח. דני לא הצליח. מה נכון על דני?",
+    "options": ["דני לא למד", "דני למד", "דני תמיד מצליח", "אי אפשר לדעת"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_med_007",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "בשקית יש רק כדורים אדומים וכחולים. הוצאתי כדור והוא לא אדום. מה צבעו?",
+    "options": ["כחול", "ירוק", "צהוב", "לבן"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_med_008",
+    "category": "logic",
+    "type": "ordering",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "4 ילדים עומדים בשורה. אלי לא ראשון ולא אחרון. רוני ליד אלי. דני אחרון. איפה רוני?",
+    "options": ["שני או שלישי", "ראשון", "רביעי", "לא בשורה"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_med_009",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "medium",
+    "timeLimit": 45,
+    "points": 150,
+    "questionText": "אם מישהו אוכל ירקות, הוא בריא. אם מישהו בריא, הוא שמח. יוסי אוכל ירקות. מה נכון?",
+    "options": ["יוסי שמח", "יוסי עצוב", "יוסי חולה", "יוסי לא אוכל"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_001",
     "category": "logic",
     "type": "deduction",
     "difficulty": "hard",
-    "timeLimit": 35,
-    "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "יש 4 בתים בשורה: אדום, כחול, ירוק וצהוב.",
-      "הבית הכחול נמצא מימין לבית האדום.",
-      "הבית הירוק נמצא בקצה השמאלי.",
-      "הבית הצהוב לא נמצא ליד הבית הכחול."
-    ],
-    "options": [
-      "הסדר הוא: ירוק, אדום, כחול, צהוב",
-      "הסדר הוא: אדום, כחול, ירוק, צהוב",
-      "הסדר הוא: ירוק, צהוב, אדום, כחול",
-      "הסדר הוא: צהוב, ירוק, אדום, כחול"
-    ],
-    "correctAnswer": 2
-  },
-  {
-    "id": "logic_deduction_010",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "hard",
-    "timeLimit": 35,
-    "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "שלושה ילדים - אמיר, בני וגלית - נולדו בשלושה חודשים שונים.",
-      "אמיר לא נולד באוגוסט.",
-      "גלית נולדה לפני בני.",
-      "מי שנולד ביוני הוא הצעיר ביותר."
-    ],
-    "options": [
-      "גלית נולדה ביוני",
-      "אמיר נולד ביוני",
-      "בני נולד ביוני",
-      "לא ניתן לדעת"
-    ],
-    "correctAnswer": 2
-  },
-  {
-    "id": "logic_if_then_004",
-    "category": "logic",
-    "type": "if_then",
-    "difficulty": "medium",
     "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם יש שמש, הילדים משחקים בחוץ.",
-      "אם הילדים משחקים בחוץ, הם שמחים.",
-      "היום יש שמש."
-    ],
-    "options": [
-      "הילדים שמחים",
-      "הילדים עצובים",
-      "הילדים בפנים",
-      "אין שמש"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_if_then_005",
-    "category": "logic",
-    "type": "if_then",
-    "difficulty": "hard",
-    "timeLimit": 35,
     "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם יורד גשם אז הכביש רטוב.",
-      "הכביש רטוב."
-    ],
-    "options": [
-      "לא ניתן לדעת אם ירד גשם",
-      "בטוח ירד גשם",
-      "בטוח לא ירד גשם",
-      "הכביש יבש"
-    ],
+    "questionText": "כל A הם B. כל B הם C. האם כל A הם C?",
+    "options": ["כן, בהכרח", "לא, אף פעם", "רק לפעמים", "אי אפשר לדעת"],
     "correctAnswer": 0,
-    "hint": "האם יש סיבות אחרות לכביש רטוב?"
+    "hint": "אם A⊂B ו-B⊂C אז A⊂C"
   },
   {
-    "id": "logic_deduction_011",
+    "id": "logic_hard_002",
     "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "לכל ציפור יש כנפיים.",
-      "לפינגווין יש כנפיים."
-    ],
-    "options": [
-      "פינגווין הוא ציפור",
-      "לפינגווין אין כנפיים",
-      "כל מי שיש לו כנפיים הוא ציפור",
-      "לא ניתן לדעת אם פינגווין הוא ציפור"
-    ],
-    "correctAnswer": 3,
-    "hint": "האם רק לציפורים יש כנפיים?"
-  },
-  {
-    "id": "logic_deduction_012",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "יש 5 כדורים בשק.",
-      "3 כדורים אדומים.",
-      "השאר כחולים."
-    ],
-    "options": [
-      "יש 2 כדורים כחולים",
-      "יש 3 כדורים כחולים",
-      "יש 4 כדורים כחולים",
-      "אין כדורים כחולים"
-    ],
+    "type": "puzzle",
+    "difficulty": "hard",
+    "timeLimit": 50,
+    "points": 200,
+    "questionText": "5 בתים בשורה. הבית האדום משמאל לכחול. הירוק באמצע. הצהוב לא ליד האדום. הלבן בקצה. איפה הצהוב?",
+    "options": ["ימין לירוק", "שמאל לירוק", "ליד הלבן", "באמצע"],
     "correctAnswer": 0
   },
   {
-    "id": "logic_deduction_013",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אורן, בועז וגבי יושבים בשורה.",
-      "אורן יושב משמאל לבועז.",
-      "גבי יושב מימין לבועז."
-    ],
-    "options": [
-      "בועז יושב באמצע",
-      "אורן יושב באמצע",
-      "גבי יושב באמצע",
-      "לא ניתן לדעת"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_014",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל החתולים אוהבים דגים.",
-      "מיצי היא חתולה.",
-      "מיצי לא אוכלת דגים היום."
-    ],
-    "options": [
-      "מיצי אוהבת דגים אבל לא אוכלת היום",
-      "מיצי לא אוהבת דגים",
-      "מיצי אינה חתולה",
-      "חתולים לא אוהבים דגים"
-    ],
-    "correctAnswer": 0,
-    "hint": "יש הבדל בין לאהוב לבין לאכול"
-  },
-  {
-    "id": "logic_deduction_015",
+    "id": "logic_hard_003",
     "category": "logic",
     "type": "deduction",
     "difficulty": "hard",
-    "timeLimit": 35,
+    "timeLimit": 40,
     "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "ארבעה ילדים עומדים בתור לקנות גלידה.",
-      "רון עומד לפני שירה.",
-      "טל עומד אחרי מיכל.",
-      "שירה עומדת שנייה בתור."
-    ],
-    "options": [
-      "רון עומד ראשון בתור",
-      "מיכל עומדת ראשונה בתור",
-      "טל עומד ראשון בתור",
-      "לא ניתן לדעת"
-    ],
+    "questionText": "אם יורד גשם, אני לוקח מטריה. לא לקחתי מטריה. מה המסקנה?",
+    "options": ["לא ירד גשם", "ירד גשם", "שכחתי מטריה", "אין מסקנה"],
     "correctAnswer": 0
   },
   {
-    "id": "logic_set_003",
+    "id": "logic_hard_004",
     "category": "logic",
-    "type": "set_membership",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל הפרחים בגינה אדומים או צהובים.",
-      "הוורד שלי מהגינה."
-    ],
-    "options": [
-      "הוורד שלי אדום או צהוב",
-      "הוורד שלי כחול",
-      "הוורד שלי לא מהגינה",
-      "אין ורדים בגינה"
-    ],
+    "type": "puzzle",
+    "difficulty": "hard",
+    "timeLimit": 50,
+    "points": 200,
+    "questionText": "3 קופסאות: אחת עם תפוחים, אחת עם תפוזים, אחת עם שניהם. כל התוויות שגויות. קופסה עם תווית 'שניהם' מכילה תפוחים. מה בקופסה עם תווית 'תפוזים'?",
+    "options": ["שניהם", "תפוחים", "תפוזים", "ריקה"],
     "correctAnswer": 0
   },
   {
-    "id": "logic_set_004",
-    "category": "logic",
-    "type": "set_membership",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "בכיתה יש 20 תלמידים.",
-      "15 תלמידים אוהבים מתמטיקה.",
-      "12 תלמידים אוהבים אנגלית.",
-      "8 תלמידים אוהבים את שניהם."
-    ],
-    "options": [
-      "יש תלמיד אחד שלא אוהב אף אחד מהם",
-      "כל התלמידים אוהבים לפחות מקצוע אחד",
-      "יש 5 תלמידים שלא אוהבים כלום",
-      "כולם אוהבים מתמטיקה"
-    ],
-    "correctAnswer": 0,
-    "hint": "15 + 12 - 8 = ?"
-  },
-  {
-    "id": "logic_if_then_006",
-    "category": "logic",
-    "type": "if_then",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם תסיים את שיעורי הבית, תוכל לצפות בטלוויזיה.",
-      "רוני סיימה את שיעורי הבית."
-    ],
-    "options": [
-      "רוני יכולה לצפות בטלוויזיה",
-      "רוני לא יכולה לצפות בטלוויזיה",
-      "רוני לא סיימה שיעורי בית",
-      "לא ניתן לדעת"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_016",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "לעגלה יש 4 גלגלים.",
-      "לאופניים יש 2 גלגלים.",
-      "יש 3 עגלות ו-2 אופניים בחניה."
-    ],
-    "options": [
-      "יש 16 גלגלים בחניה",
-      "יש 12 גלגלים בחניה",
-      "יש 10 גלגלים בחניה",
-      "יש 14 גלגלים בחניה"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_017",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "יום שני בא אחרי יום ראשון.",
-      "יום רביעי בא אחרי יום שלישי.",
-      "היום יום שלישי."
-    ],
-    "options": [
-      "מחר יום רביעי",
-      "מחר יום שני",
-      "אתמול יום רביעי",
-      "מחר יום שישי"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_018",
+    "id": "logic_hard_005",
     "category": "logic",
     "type": "deduction",
     "difficulty": "hard",
-    "timeLimit": 35,
+    "timeLimit": 40,
     "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "חמישה ילדים - אבי, בני, גיל, דני ואהוד - נבחרו לצוות.",
-      "אבי ובני תמיד ביחד.",
-      "גיל ודני לא יכולים להיות ביחד.",
-      "אם אהוד נבחר, גם גיל חייב להיבחר."
-    ],
-    "options": [
-      "אם בוחרים באהוד, דני לא יכול להיבחר",
-      "אבי יכול להיות לבד",
-      "גיל ודני יכולים להיות ביחד",
-      "אהוד תמיד נבחר"
-    ],
+    "questionText": "כל החתולים שונאים מים. כל מה ששונא מים לא שוחה. טום חתול. מה נכון?",
+    "options": ["טום לא שוחה", "טום שוחה", "טום אוהב מים", "טום לא חתול"],
     "correctAnswer": 0
   },
   {
-    "id": "logic_if_then_007",
+    "id": "logic_hard_006",
     "category": "logic",
-    "type": "if_then",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "אם החנות פתוחה, אני קונה לחם.",
-      "אם אני קונה לחם, אני מכין טוסט.",
-      "החנות פתוחה."
-    ],
-    "options": [
-      "אני מכין טוסט",
-      "אני לא מכין טוסט",
-      "החנות סגורה",
-      "אין לחם"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_deduction_019",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "easy",
-    "timeLimit": 45,
-    "points": 100,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "ריבוע הוא צורה עם 4 צלעות שוות.",
-      "לצורה שציירתי יש 4 צלעות שוות."
-    ],
-    "options": [
-      "הצורה שציירתי יכולה להיות ריבוע",
-      "הצורה שציירתי בטוח ריבוע",
-      "הצורה שציירתי לא ריבוע",
-      "ריבוע הוא משולש"
-    ],
-    "correctAnswer": 0,
-    "hint": "האם רק לריבוע יש 4 צלעות שוות?"
-  },
-  {
-    "id": "logic_deduction_020",
-    "category": "logic",
-    "type": "deduction",
-    "difficulty": "medium",
-    "timeLimit": 40,
-    "points": 150,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "למשה יש יותר סוכריות מליאור.",
-      "לליאור יש יותר סוכריות מנועה.",
-      "לנועה יש 5 סוכריות."
-    ],
-    "options": [
-      "למשה יש לפחות 7 סוכריות",
-      "למשה יש 6 סוכריות",
-      "למשה יש 5 סוכריות",
-      "לא ניתן לדעת כמה סוכריות למשה"
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "id": "logic_set_005",
-    "category": "logic",
-    "type": "set_membership",
+    "type": "ordering",
     "difficulty": "hard",
-    "timeLimit": 35,
+    "timeLimit": 45,
     "points": 200,
-    "questionText": "קרא את הנתונים ובחר את התשובה הנכונה:",
-    "statements": [
-      "כל הספורטאים שלנו מהירים.",
-      "כל מי שמהיר זוכה בתחרויות.",
-      "דוד ספורטאי שלנו."
-    ],
-    "options": [
-      "דוד זוכה בתחרויות",
-      "דוד לא זוכה בתחרויות",
-      "דוד לא מהיר",
-      "דוד לא ספורטאי"
-    ],
+    "questionText": "5 רצים במירוץ. אבי סיים לפני דני אבל אחרי יוסי. רוני סיים אחרי דני. מי לא יכול להיות ראשון?",
+    "options": ["רוני", "יוסי", "אבי", "דני"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_007",
+    "category": "logic",
+    "type": "puzzle",
+    "difficulty": "hard",
+    "timeLimit": 50,
+    "points": 200,
+    "questionText": "יש לי מספר. אם מכפילים ב-3 ומוסיפים 5, מקבלים 20. מהו המספר?",
+    "options": ["5", "6", "4", "7"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_008",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "hard",
+    "timeLimit": 45,
+    "points": 200,
+    "questionText": "אם A אז B. אם B אז C. אם לא C, מה נכון?",
+    "options": ["לא A", "A", "B", "גם A וגם B"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_009",
+    "category": "logic",
+    "type": "puzzle",
+    "difficulty": "hard",
+    "timeLimit": 50,
+    "points": 200,
+    "questionText": "4 חברים: כל אחד אוהב צבע אחר (אדום/כחול/ירוק/צהוב). דני לא אוהב אדום או כחול. מי שאוהב ירוק יושב ליד דני. יוסי אוהב צהוב. מה דני אוהב?",
+    "options": ["ירוק", "אדום", "כחול", "צהוב"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_010",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "hard",
+    "timeLimit": 45,
+    "points": 200,
+    "questionText": "כל מי שגר בעיר X דובר עברית. יש אנשים שדוברים עברית ולא גרים בעיר X. דני דובר עברית. מה נכון?",
+    "options": ["דני אולי גר בעיר X", "דני בטוח גר בעיר X", "דני לא גר בעיר X", "דני לא דובר עברית"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_011",
+    "category": "logic",
+    "type": "puzzle",
+    "difficulty": "hard",
+    "timeLimit": 50,
+    "points": 200,
+    "questionText": "בכיתה, מספר הבנות כפול ממספר הבנים. יש 18 תלמידים. כמה בנות?",
+    "options": ["12", "9", "6", "10"],
+    "correctAnswer": 0
+  },
+  {
+    "id": "logic_hard_012",
+    "category": "logic",
+    "type": "deduction",
+    "difficulty": "hard",
+    "timeLimit": 45,
+    "points": 200,
+    "questionText": "שני אחים תמיד משקרים או תמיד אומרים אמת. אחד אמר: 'שנינו שקרנים'. מה נכון?",
+    "options": ["שניהם דוברי אמת", "שניהם שקרנים", "אחד שקרן ואחד לא", "אי אפשר לדעת"],
     "correctAnswer": 0
   }
 ]
-

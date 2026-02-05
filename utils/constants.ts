@@ -66,17 +66,17 @@ export const DIFFICULTY_SETTINGS: Record<Difficulty, {
   },
 };
 
-// Level Configurations
+// Level Configurations - Progressive difficulty
 export const LEVEL_CONFIGS: LevelConfig[] = [
-  { level: 1, questionsCount: 5, difficulty: 'easy', timeLimit: 60, requiredStars: 0, rewards: { points: 100, stars: 3 } },
-  { level: 2, questionsCount: 5, difficulty: 'easy', timeLimit: 55, requiredStars: 6, rewards: { points: 150, stars: 3 } },
-  { level: 3, questionsCount: 6, difficulty: 'easy', timeLimit: 50, requiredStars: 12, rewards: { points: 200, stars: 4 } },
-  { level: 4, questionsCount: 6, difficulty: 'medium', timeLimit: 50, requiredStars: 18, rewards: { points: 300, stars: 4 } },
-  { level: 5, questionsCount: 7, difficulty: 'medium', timeLimit: 45, requiredStars: 25, rewards: { points: 400, stars: 5 } },
-  { level: 6, questionsCount: 7, difficulty: 'medium', timeLimit: 40, requiredStars: 32, rewards: { points: 500, stars: 5 } },
-  { level: 7, questionsCount: 8, difficulty: 'medium', timeLimit: 40, requiredStars: 40, rewards: { points: 600, stars: 6 } },
+  { level: 1, questionsCount: 4, difficulty: 'easy', timeLimit: 60, requiredStars: 0, rewards: { points: 100, stars: 3 } },
+  { level: 2, questionsCount: 5, difficulty: 'medium', timeLimit: 55, requiredStars: 6, rewards: { points: 150, stars: 3 } },
+  { level: 3, questionsCount: 5, difficulty: 'medium', timeLimit: 50, requiredStars: 12, rewards: { points: 200, stars: 4 } },
+  { level: 4, questionsCount: 6, difficulty: 'medium', timeLimit: 45, requiredStars: 18, rewards: { points: 300, stars: 4 } },
+  { level: 5, questionsCount: 6, difficulty: 'hard', timeLimit: 45, requiredStars: 25, rewards: { points: 400, stars: 5 } },
+  { level: 6, questionsCount: 7, difficulty: 'hard', timeLimit: 40, requiredStars: 32, rewards: { points: 500, stars: 5 } },
+  { level: 7, questionsCount: 7, difficulty: 'hard', timeLimit: 35, requiredStars: 40, rewards: { points: 600, stars: 6 } },
   { level: 8, questionsCount: 8, difficulty: 'hard', timeLimit: 35, requiredStars: 48, rewards: { points: 750, stars: 6 } },
-  { level: 9, questionsCount: 9, difficulty: 'hard', timeLimit: 30, requiredStars: 56, rewards: { points: 900, stars: 7 } },
+  { level: 9, questionsCount: 8, difficulty: 'hard', timeLimit: 30, requiredStars: 56, rewards: { points: 900, stars: 7 } },
   { level: 10, questionsCount: 10, difficulty: 'hard', timeLimit: 25, requiredStars: 65, rewards: { points: 1000, stars: 10 } },
 ];
 
