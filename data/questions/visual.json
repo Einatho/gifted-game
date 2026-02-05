@@ -1,0 +1,586 @@
+[
+  {
+    "id": "visual_seq_001",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#3b82f6", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לדפוס החוזר"
+  },
+  {
+    "id": "visual_seq_002",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#ef4444", "size": "small", "filled": true},
+      {"type": "circle", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#ef4444", "size": "large", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#ef4444", "size": "small", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "square", "color": "#ef4444", "size": "small", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לגודל"
+  },
+  {
+    "id": "visual_seq_003",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "square", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#22c55e", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#22c55e", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#22c55e", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#22c55e", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לדפוס: משולש, משולש, ריבוע..."
+  },
+  {
+    "id": "visual_seq_004",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": false},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": false}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#f59e0b", "size": "medium", "filled": false}],
+      [{"type": "square", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#f59e0b", "size": "medium", "filled": false}]
+    ],
+    "correctAnswer": 0,
+    "hint": "מלא, ריק, מלא, ריק..."
+  },
+  {
+    "id": "visual_seq_005",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "star", "color": "#8b5cf6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#8b5cf6", "size": "medium", "filled": true},
+      {"type": "star", "color": "#8b5cf6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#8b5cf6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "star", "color": "#8b5cf6", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#8b5cf6", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#8b5cf6", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#8b5cf6", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_006",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "small", "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "small", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "large", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "large", "filled": true}],
+      [{"type": "circle", "color": "#3b82f6", "size": "small", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב גם לצבע וגם לגודל"
+  },
+  {
+    "id": "visual_seq_007",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 0, "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 90, "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 180, "filled": true}
+    ],
+    "options": [
+      [{"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 270, "filled": true}],
+      [{"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 0, "filled": true}],
+      [{"type": "square", "color": "#22c55e", "size": "medium", "rotation": 0, "filled": true}],
+      [{"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 180, "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לסיבוב"
+  },
+  {
+    "id": "visual_seq_008",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#8b5cf6", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#8b5cf6", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#22c55e", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "סדרת צבעים"
+  },
+  {
+    "id": "visual_seq_009",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "square", "color": "#3b82f6", "size": "large", "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "small", "filled": true},
+      {"type": "circle", "color": "#ef4444", "size": "large", "filled": true},
+      {"type": "circle", "color": "#ef4444", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#ef4444", "size": "small", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "small", "filled": true}],
+      [{"type": "triangle", "color": "#ef4444", "size": "small", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_010",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "hard",
+    "timeLimit": 35,
+    "points": 200,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "triangle", "color": "#3b82f6", "size": "small", "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "medium", "filled": false},
+      {"type": "triangle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "large", "filled": false},
+      {"type": "triangle", "color": "#3b82f6", "size": "large", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#ef4444", "size": "small", "filled": false}],
+      [{"type": "square", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "triangle", "color": "#3b82f6", "size": "small", "filled": false}],
+      [{"type": "circle", "color": "#ef4444", "size": "small", "filled": false}]
+    ],
+    "correctAnswer": 0,
+    "hint": "דפוס מורכב: צורה, צבע, גודל, מילוי"
+  },
+  {
+    "id": "visual_pattern_001",
+    "category": "visual",
+    "type": "pattern",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה החסרה?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#3b82f6", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_pattern_002",
+    "category": "visual",
+    "type": "pattern",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה החסרה?",
+    "shapes": [
+      {"type": "diamond", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "diamond", "color": "#f59e0b", "size": "medium", "filled": false},
+      {"type": "diamond", "color": "#f59e0b", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "diamond", "color": "#f59e0b", "size": "medium", "filled": false}],
+      [{"type": "diamond", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#f59e0b", "size": "medium", "filled": false}],
+      [{"type": "circle", "color": "#f59e0b", "size": "medium", "filled": false}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_rotation_001",
+    "category": "visual",
+    "type": "rotation",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה אחרי סיבוב?",
+    "shapes": [
+      {"type": "triangle", "color": "#8b5cf6", "size": "large", "rotation": 0, "filled": true}
+    ],
+    "options": [
+      [{"type": "triangle", "color": "#8b5cf6", "size": "large", "rotation": 90, "filled": true}],
+      [{"type": "triangle", "color": "#8b5cf6", "size": "large", "rotation": 0, "filled": true}],
+      [{"type": "triangle", "color": "#8b5cf6", "size": "large", "rotation": 180, "filled": true}],
+      [{"type": "square", "color": "#8b5cf6", "size": "large", "rotation": 90, "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "סיבוב של 90 מעלות"
+  },
+  {
+    "id": "visual_seq_011",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "hexagon", "color": "#10b981", "size": "medium", "filled": true},
+      {"type": "hexagon", "color": "#10b981", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#10b981", "size": "medium", "filled": true},
+      {"type": "hexagon", "color": "#10b981", "size": "medium", "filled": true},
+      {"type": "hexagon", "color": "#10b981", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#10b981", "size": "medium", "filled": true}],
+      [{"type": "hexagon", "color": "#10b981", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#10b981", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#10b981", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_012",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "star", "color": "#f59e0b", "size": "small", "filled": true},
+      {"type": "star", "color": "#f59e0b", "size": "small", "filled": true},
+      {"type": "star", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "star", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "star", "color": "#f59e0b", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "star", "color": "#f59e0b", "size": "large", "filled": true}],
+      [{"type": "star", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#f59e0b", "size": "small", "filled": true}],
+      [{"type": "circle", "color": "#f59e0b", "size": "large", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "2 קטנים, 3 בינוניים..."
+  },
+  {
+    "id": "visual_seq_013",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "hard",
+    "timeLimit": 35,
+    "points": 200,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "square", "color": "#22c55e", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#8b5cf6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#ec4899", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לדפוס הצורות"
+  },
+  {
+    "id": "visual_seq_014",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "square", "color": "#ef4444", "size": "medium", "rotation": 0, "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "medium", "rotation": 45, "filled": true},
+      {"type": "square", "color": "#ef4444", "size": "medium", "rotation": 0, "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#ef4444", "size": "medium", "rotation": 45, "filled": true}],
+      [{"type": "square", "color": "#ef4444", "size": "medium", "rotation": 0, "filled": true}],
+      [{"type": "diamond", "color": "#ef4444", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#ef4444", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_015",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "small", "filled": false},
+      {"type": "circle", "color": "#3b82f6", "size": "small", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": false},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#3b82f6", "size": "large", "filled": false}],
+      [{"type": "circle", "color": "#3b82f6", "size": "large", "filled": true}],
+      [{"type": "circle", "color": "#3b82f6", "size": "small", "filled": false}],
+      [{"type": "square", "color": "#3b82f6", "size": "large", "filled": false}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_016",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "hard",
+    "timeLimit": 35,
+    "points": 200,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "triangle", "color": "#22c55e", "size": "small", "rotation": 0, "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "medium", "rotation": 60, "filled": true},
+      {"type": "triangle", "color": "#22c55e", "size": "large", "rotation": 120, "filled": true}
+    ],
+    "options": [
+      [{"type": "triangle", "color": "#22c55e", "size": "small", "rotation": 180, "filled": true}],
+      [{"type": "triangle", "color": "#22c55e", "size": "small", "rotation": 0, "filled": true}],
+      [{"type": "square", "color": "#22c55e", "size": "small", "rotation": 180, "filled": true}],
+      [{"type": "triangle", "color": "#22c55e", "size": "large", "rotation": 180, "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "שים לב לגודל ולסיבוב"
+  },
+  {
+    "id": "visual_pattern_003",
+    "category": "visual",
+    "type": "pattern",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "איזו צורה שונה מהאחרות?",
+    "shapes": [
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#3b82f6", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_017",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "diamond", "color": "#ec4899", "size": "medium", "filled": true},
+      {"type": "diamond", "color": "#ec4899", "size": "medium", "filled": true},
+      {"type": "diamond", "color": "#ec4899", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "diamond", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#ec4899", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#ec4899", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_018",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "circle", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#ef4444", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "circle", "color": "#ef4444", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#3b82f6", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#22c55e", "size": "medium", "filled": true}],
+      [{"type": "square", "color": "#ef4444", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_019",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "hard",
+    "timeLimit": 35,
+    "points": 200,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "hexagon", "color": "#8b5cf6", "size": "small", "filled": true},
+      {"type": "hexagon", "color": "#8b5cf6", "size": "small", "filled": false},
+      {"type": "hexagon", "color": "#8b5cf6", "size": "medium", "filled": true},
+      {"type": "hexagon", "color": "#8b5cf6", "size": "medium", "filled": false}
+    ],
+    "options": [
+      [{"type": "hexagon", "color": "#8b5cf6", "size": "large", "filled": true}],
+      [{"type": "hexagon", "color": "#8b5cf6", "size": "large", "filled": false}],
+      [{"type": "hexagon", "color": "#8b5cf6", "size": "small", "filled": true}],
+      [{"type": "circle", "color": "#8b5cf6", "size": "large", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_020",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "easy",
+    "timeLimit": 45,
+    "points": 100,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "triangle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "square", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "triangle", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "triangle", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "circle", "color": "#f59e0b", "size": "medium", "filled": true}],
+      [{"type": "star", "color": "#f59e0b", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "visual_seq_021",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "medium",
+    "timeLimit": 40,
+    "points": 150,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "star", "color": "#ef4444", "size": "large", "filled": true},
+      {"type": "star", "color": "#f59e0b", "size": "medium", "filled": true},
+      {"type": "star", "color": "#22c55e", "size": "small", "filled": true}
+    ],
+    "options": [
+      [{"type": "star", "color": "#3b82f6", "size": "large", "filled": true}],
+      [{"type": "star", "color": "#3b82f6", "size": "small", "filled": true}],
+      [{"type": "star", "color": "#ef4444", "size": "large", "filled": true}],
+      [{"type": "circle", "color": "#3b82f6", "size": "large", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "הדפוס חוזר מההתחלה"
+  },
+  {
+    "id": "visual_seq_022",
+    "category": "visual",
+    "type": "sequence",
+    "difficulty": "hard",
+    "timeLimit": 35,
+    "points": 200,
+    "questionText": "מה הצורה הבאה בסדרה?",
+    "shapes": [
+      {"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 0, "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 15, "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 30, "filled": true},
+      {"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 45, "filled": true}
+    ],
+    "options": [
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 60, "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 45, "filled": true}],
+      [{"type": "square", "color": "#3b82f6", "size": "medium", "rotation": 0, "filled": true}],
+      [{"type": "diamond", "color": "#3b82f6", "size": "medium", "filled": true}]
+    ],
+    "correctAnswer": 0,
+    "hint": "סיבוב הדרגתי"
+  }
+]
+

@@ -1,0 +1,754 @@
+[
+  {
+    "id": "verbal_analogy_001",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["כלב", "נביחה"],
+    "options": [
+      ["חתול", "מיאו"],
+      ["ציפור", "עץ"],
+      ["דג", "מים"],
+      ["פרח", "גן"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה הקול שהחיה משמיעה?"
+  },
+  {
+    "id": "verbal_analogy_002",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["ספר", "קריאה"],
+    "options": [
+      ["כדור", "משחק"],
+      ["כיסא", "שולחן"],
+      ["עט", "כחול"],
+      ["חלון", "זכוכית"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה עושים עם החפץ?"
+  },
+  {
+    "id": "verbal_analogy_003",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["יד", "אצבע"],
+    "options": [
+      ["רגל", "בוהן"],
+      ["ראש", "גוף"],
+      ["עין", "לראות"],
+      ["פה", "לדבר"]
+    ],
+    "correctAnswer": 0,
+    "hint": "חלק מהשלם"
+  },
+  {
+    "id": "verbal_analogy_004",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["חם", "קר"],
+    "options": [
+      ["גבוה", "נמוך"],
+      ["יום", "שמש"],
+      ["לילה", "ירח"],
+      ["מים", "ים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "הפכים"
+  },
+  {
+    "id": "verbal_analogy_005",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["תפוח", "פרי"],
+    "options": [
+      ["ורד", "פרח"],
+      ["אדום", "צבע"],
+      ["עץ", "יער"],
+      ["מים", "שתייה"]
+    ],
+    "correctAnswer": 0,
+    "hint": "סוג של קטגוריה"
+  },
+  {
+    "id": "verbal_analogy_006",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["נגר", "עץ"],
+    "options": [
+      ["טבח", "אוכל"],
+      ["רופא", "בית חולים"],
+      ["מורה", "כיתה"],
+      ["שוטר", "מדים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "עם מה עובד המקצוע?"
+  },
+  {
+    "id": "verbal_analogy_007",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["ילד", "ילדה"],
+    "options": [
+      ["איש", "אישה"],
+      ["אבא", "בית"],
+      ["אח", "משפחה"],
+      ["ילד", "בית ספר"]
+    ],
+    "correctAnswer": 0,
+    "hint": "זכר ונקבה"
+  },
+  {
+    "id": "verbal_analogy_008",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["אפודה", "בגד"],
+    "options": [
+      ["מברג", "כלי עבודה"],
+      ["גופייה", "קיץ"],
+      ["משפחה", "בית"],
+      ["צמר", "סוודר"]
+    ],
+    "correctAnswer": 0,
+    "hint": "סוג של..."
+  },
+  {
+    "id": "verbal_analogy_009",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["עין", "לראות"],
+    "options": [
+      ["אוזן", "לשמוע"],
+      ["פה", "שיניים"],
+      ["אף", "פנים"],
+      ["יד", "גוף"]
+    ],
+    "correctAnswer": 0,
+    "hint": "איבר ותפקידו"
+  },
+  {
+    "id": "verbal_analogy_010",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["מכונית", "כביש"],
+    "options": [
+      ["סירה", "ים"],
+      ["מטוס", "שמיים"],
+      ["אופניים", "גלגלים"],
+      ["רכבת", "קרון"]
+    ],
+    "correctAnswer": 0,
+    "hint": "היכן נע כלי התחבורה?"
+  },
+  {
+    "id": "verbal_analogy_011",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["סבא", "נכד"],
+    "options": [
+      ["דוד", "אחיין"],
+      ["אבא", "בית"],
+      ["אמא", "משפחה"],
+      ["אח", "אחות"]
+    ],
+    "correctAnswer": 0,
+    "hint": "יחסי משפחה"
+  },
+  {
+    "id": "verbal_analogy_012",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["זרע", "עץ"],
+    "options": [
+      ["ביצה", "אפרוח"],
+      ["פרח", "גן"],
+      ["עלה", "ירוק"],
+      ["שורש", "אדמה"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה גדל ממה?"
+  },
+  {
+    "id": "verbal_analogy_013",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["מים", "צמא"],
+    "options": [
+      ["אוכל", "רעב"],
+      ["שינה", "לילה"],
+      ["מיטה", "חדר"],
+      ["שמש", "יום"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה פותר את הבעיה?"
+  },
+  {
+    "id": "verbal_analogy_014",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["סופר", "ספר"],
+    "options": [
+      ["צייר", "ציור"],
+      ["מורה", "כיתה"],
+      ["רופא", "חולה"],
+      ["שחקן", "במה"]
+    ],
+    "correctAnswer": 0,
+    "hint": "יוצר ויצירתו"
+  },
+  {
+    "id": "verbal_analogy_015",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["מלך", "ממלכה"],
+    "options": [
+      ["נשיא", "מדינה"],
+      ["חייל", "צבא"],
+      ["מורה", "בית ספר"],
+      ["רופא", "בית חולים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מנהיג והמקום שהוא מנהיג"
+  },
+  {
+    "id": "verbal_category_001",
+    "category": "verbal",
+    "type": "category",
+    "difficulty": "easy",
+    "timeLimit": 35,
+    "points": 100,
+    "questionText": "איזו מילה לא שייכת לקבוצה?",
+    "pair1": ["כלב", "חתול"],
+    "options": [
+      ["שולחן", "רהיט"],
+      ["ציפור", "חיה"],
+      ["דג", "חיה"],
+      ["סוס", "חיה"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה לא חיה?"
+  },
+  {
+    "id": "verbal_category_002",
+    "category": "verbal",
+    "type": "category",
+    "difficulty": "easy",
+    "timeLimit": 35,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["אביב", "עונה"],
+    "options": [
+      ["ינואר", "חודש"],
+      ["שמש", "חם"],
+      ["גשם", "מים"],
+      ["שלג", "לבן"]
+    ],
+    "correctAnswer": 0,
+    "hint": "סוג של יחידת זמן"
+  },
+  {
+    "id": "verbal_analogy_016",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["לחם", "מאפייה"],
+    "options": [
+      ["בשר", "קצביה"],
+      ["חלב", "לבן"],
+      ["ירקות", "ירוק"],
+      ["דגים", "ים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "היכן קונים את המוצר?"
+  },
+  {
+    "id": "verbal_analogy_017",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["עפרון", "כתיבה"],
+    "options": [
+      ["מספריים", "חיתוך"],
+      ["מחק", "גומי"],
+      ["סרגל", "ארוך"],
+      ["דבק", "לבן"]
+    ],
+    "correctAnswer": 0,
+    "hint": "כלי ושימושו"
+  },
+  {
+    "id": "verbal_analogy_018",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["שן", "פה"],
+    "options": [
+      ["ציפורן", "אצבע"],
+      ["שיער", "ראש"],
+      ["עין", "לראות"],
+      ["רגל", "נעל"]
+    ],
+    "correctAnswer": 0,
+    "hint": "חלק קטן בתוך חלק גדול יותר"
+  },
+  {
+    "id": "verbal_analogy_019",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["קמח", "לחם"],
+    "options": [
+      ["ענבים", "יין"],
+      ["חיטה", "שדה"],
+      ["מים", "ים"],
+      ["אש", "חום"]
+    ],
+    "correctAnswer": 0,
+    "hint": "חומר גלם והמוצר שנעשה ממנו"
+  },
+  {
+    "id": "verbal_analogy_020",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["שקט", "רעש"],
+    "options": [
+      ["אור", "חושך"],
+      ["יום", "לילה"],
+      ["שמש", "ירח"],
+      ["קיץ", "חורף"]
+    ],
+    "correctAnswer": 0,
+    "hint": "הפכים מוחלטים"
+  },
+  {
+    "id": "verbal_analogy_021",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["שמש", "יום"],
+    "options": [
+      ["ירח", "לילה"],
+      ["כוכב", "שמיים"],
+      ["ענן", "גשם"],
+      ["רוח", "קר"]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "verbal_analogy_022",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["דף", "מחברת"],
+    "options": [
+      ["לבנה", "קיר"],
+      ["עט", "כתיבה"],
+      ["ספר", "קריאה"],
+      ["תיק", "בית ספר"]
+    ],
+    "correctAnswer": 0,
+    "hint": "יחידה קטנה ביחידה גדולה"
+  },
+  {
+    "id": "verbal_analogy_023",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["רופא", "מרפאה"],
+    "options": [
+      ["מורה", "בית ספר"],
+      ["חולה", "תרופה"],
+      ["אחות", "זריקה"],
+      ["רוקח", "תרופות"]
+    ],
+    "correctAnswer": 0,
+    "hint": "איפה עובד בעל המקצוע?"
+  },
+  {
+    "id": "verbal_analogy_024",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["אריה", "שאגה"],
+    "options": [
+      ["זאב", "ייללה"],
+      ["פיל", "גדול"],
+      ["נמר", "מהיר"],
+      ["דוב", "יער"]
+    ],
+    "correctAnswer": 0,
+    "hint": "חיה והקול שלה"
+  },
+  {
+    "id": "verbal_analogy_025",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["תלמיד", "ללמוד"],
+    "options": [
+      ["פועל", "לעבוד"],
+      ["מורה", "כיתה"],
+      ["ספר", "לקרוא"],
+      ["בית ספר", "ללמד"]
+    ],
+    "correctAnswer": 0,
+    "hint": "אדם והפעולה שלו"
+  },
+  {
+    "id": "verbal_opposite_001",
+    "category": "verbal",
+    "type": "opposite",
+    "difficulty": "easy",
+    "timeLimit": 35,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["גדול", "קטן"],
+    "options": [
+      ["רחב", "צר"],
+      ["ארוך", "גבוה"],
+      ["עבה", "כבד"],
+      ["קל", "נוח"]
+    ],
+    "correctAnswer": 0,
+    "hint": "הפכים"
+  },
+  {
+    "id": "verbal_opposite_002",
+    "category": "verbal",
+    "type": "opposite",
+    "difficulty": "easy",
+    "timeLimit": 35,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["מהר", "לאט"],
+    "options": [
+      ["קדימה", "אחורה"],
+      ["רץ", "הולך"],
+      ["מכונית", "רכבת"],
+      ["דרך", "כביש"]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "verbal_opposite_003",
+    "category": "verbal",
+    "type": "opposite",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["עשיר", "עני"],
+    "options": [
+      ["חכם", "טיפש"],
+      ["כסף", "זהב"],
+      ["בית", "ארמון"],
+      ["מלך", "נסיך"]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "verbal_similar_001",
+    "category": "verbal",
+    "type": "similar",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["שמח", "עליז"],
+    "options": [
+      ["עצוב", "מדוכא"],
+      ["כועס", "אדום"],
+      ["פחד", "לילה"],
+      ["אהבה", "לב"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מילים נרדפות"
+  },
+  {
+    "id": "verbal_analogy_026",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["בוקר", "ארוחת בוקר"],
+    "options": [
+      ["ערב", "ארוחת ערב"],
+      ["צהריים", "שמש"],
+      ["לילה", "שינה"],
+      ["יום", "אור"]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "verbal_analogy_027",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["חורף", "קור"],
+    "options": [
+      ["קיץ", "חום"],
+      ["אביב", "פרחים"],
+      ["סתיו", "עלים"],
+      ["שנה", "חודשים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "עונה ומזג האוויר האופייני"
+  },
+  {
+    "id": "verbal_analogy_028",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["מפתח", "מנעול"],
+    "options": [
+      ["סיסמה", "מחשב"],
+      ["דלת", "בית"],
+      ["ברזל", "מתכת"],
+      ["כסף", "בנק"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה פותח מה?"
+  },
+  {
+    "id": "verbal_analogy_029",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["גשם", "מטריה"],
+    "options": [
+      ["שמש", "כובע"],
+      ["רוח", "עץ"],
+      ["שלג", "לבן"],
+      ["ענן", "שמיים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "התגוננות מפני מזג האוויר"
+  },
+  {
+    "id": "verbal_analogy_030",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["נהג", "מכונית"],
+    "options": [
+      ["טייס", "מטוס"],
+      ["רופא", "בית חולים"],
+      ["מורה", "תלמיד"],
+      ["שוטר", "מדים"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מי מפעיל מה?"
+  },
+  {
+    "id": "verbal_analogy_031",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["זיכרון", "עבר"],
+    "options": [
+      ["תקווה", "עתיד"],
+      ["חלום", "לילה"],
+      ["מחשבה", "מוח"],
+      ["רגש", "לב"]
+    ],
+    "correctAnswer": 0,
+    "hint": "קשר לזמן"
+  },
+  {
+    "id": "verbal_analogy_032",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["נעל", "רגל"],
+    "options": [
+      ["כפפה", "יד"],
+      ["גרב", "לבן"],
+      ["חגורה", "מכנסיים"],
+      ["צעיף", "חורף"]
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "id": "verbal_analogy_033",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["אש", "עשן"],
+    "options": [
+      ["גשם", "שלולית"],
+      ["שמש", "חם"],
+      ["רוח", "קר"],
+      ["מים", "נוזל"]
+    ],
+    "correctAnswer": 0,
+    "hint": "גורם ותוצאה"
+  },
+  {
+    "id": "verbal_analogy_034",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "hard",
+    "timeLimit": 30,
+    "points": 200,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["משפט", "נקודה"],
+    "options": [
+      ["שאלה", "סימן שאלה"],
+      ["מילה", "אות"],
+      ["ספר", "עמוד"],
+      ["פסקה", "טקסט"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה מסיים מה?"
+  },
+  {
+    "id": "verbal_analogy_035",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "easy",
+    "timeLimit": 40,
+    "points": 100,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["עוגה", "קמח"],
+    "options": [
+      ["גבינה", "חלב"],
+      ["לחם", "מאפייה"],
+      ["סוכר", "מתוק"],
+      ["ביצה", "תרנגולת"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מה עשוי ממה?"
+  },
+  {
+    "id": "verbal_analogy_036",
+    "category": "verbal",
+    "type": "analogy",
+    "difficulty": "medium",
+    "timeLimit": 35,
+    "points": 150,
+    "questionText": "מצא את הזוג המתאים:",
+    "pair1": ["שעון", "זמן"],
+    "options": [
+      ["מד חום", "טמפרטורה"],
+      ["משקפיים", "עיניים"],
+      ["טלפון", "שיחה"],
+      ["מחשב", "אינטרנט"]
+    ],
+    "correctAnswer": 0,
+    "hint": "מכשיר ומה הוא מודד"
+  }
+]
+
