@@ -182,11 +182,6 @@ export default function HomeScreen() {
           </LinearGradient>
         </View>
 
-        {/* Real Test Card */}
-        <View className="px-6">
-          <RealTestCard />
-        </View>
-
         {/* Categories Section */}
         <View className="px-6">
           <Text className="text-xl font-bold text-slate-800 text-right mb-4">
@@ -198,6 +193,14 @@ export default function HomeScreen() {
               <CategoryCard key={category} category={category} />
             ))}
           </View>
+        </View>
+
+        {/* Real Test Card */}
+        <View className="px-6 mt-4">
+          <Text className="text-xl font-bold text-slate-800 text-right mb-4">
+            מבחן סימולציה
+          </Text>
+          <RealTestCard />
         </View>
 
         {/* Quick Tips */}
