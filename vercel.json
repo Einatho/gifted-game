@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm run build:web",
+  "buildCommand": "npx expo export --platform web",
   "outputDirectory": "dist",
+  "installCommand": "npm install --legacy-peer-deps",
   "framework": null,
-  "installCommand": "npm install --legacy-peer-deps"
+  "regions": ["iad1"]
 }
