@@ -6,16 +6,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useGameStore } from '@/stores/gameStore';
 import { CATEGORY_INFO } from '@/utils/constants';
 import { QuestionCategory } from '@/utils/types';
-import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
 
 type CategoryCardProps = {
   category: QuestionCategory;
-  index: number;
 };
 
-function CategoryCard({ category, index }: CategoryCardProps) {
+function CategoryCard({ category }: CategoryCardProps) {
   const router = useRouter();
   const info = CATEGORY_INFO[category];
   const progress = useGameStore((state) => state.progress.categoryProgress[category]);
@@ -35,10 +33,7 @@ function CategoryCard({ category, index }: CategoryCardProps) {
   };
 
   return (
-    <Animated.View
-      entering={FadeInDown.delay(index * 100).springify()}
-      className="w-[48%] mb-4"
-    >
+    <View className="w-[48%] mb-4">
       <TouchableOpacity
         onPress={() => router.push(`/levels/${category}`)}
         activeOpacity={0.8}
@@ -69,7 +64,51 @@ function CategoryCard({ category, index }: CategoryCardProps) {
           </View>
         </LinearGradient>
       </TouchableOpacity>
-    </Animated.View>
+    </View>
+  );
+}
+
+function RealTestCard() {
+  const router = useRouter();
+
+  return (
+    <View className="mb-6">
+      <TouchableOpacity
+        onPress={() => router.push('/game/real-test')}
+        activeOpacity={0.8}
+      >
+        <LinearGradient
+          colors={['#ec4899', '#be185d']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          className="rounded-3xl p-6"
+          style={{ elevation: 8, shadowColor: '#ec4899', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.3, shadowRadius: 8 }}
+        >
+          <View className="flex-row items-center justify-between">
+            <View className="flex-1 mr-4">
+              <View className="flex-row items-center mb-2">
+                <View className="bg-white/20 px-3 py-1 rounded-full">
+                  <Text className="text-white text-xs font-bold">מבחן אמיתי</Text>
+                </View>
+              </View>
+              <Text className="text-white text-2xl font-bold text-right mb-2">
+                סימולציה למבחן 📝
+              </Text>
+              <Text className="text-white/80 text-right text-sm">
+                20 שאלות מכל הקטגוריות ומכל הרמות - בדיוק כמו במבחן האמיתי!
+              </Text>
+              <View className="flex-row items-center justify-end mt-3">
+                <Text className="text-white font-bold">התחל מבחן</Text>
+                <Ionicons name="arrow-back" size={20} color="white" style={{ marginRight: 8 }} />
+              </View>
+            </View>
+            <View className="bg-white/20 w-20 h-20 rounded-2xl items-center justify-center">
+              <Ionicons name="document-text" size={40} color="white" />
+            </View>
+          </View>
+        </LinearGradient>
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -85,23 +124,17 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
       >
         {/* Header */}
-        <Animated.View 
-          entering={FadeInUp.springify()}
-          className="px-6 pt-4 pb-6"
-        >
+        <View className="px-6 pt-4 pb-6">
           <Text className="text-3xl font-bold text-slate-800 text-right">
             מבחן מחוננים 🌟
           </Text>
           <Text className="text-slate-500 text-right mt-1">
             בוא נתאמן ונצליח!
           </Text>
-        </Animated.View>
+        </View>
 
         {/* Stats Overview */}
-        <Animated.View
-          entering={FadeInDown.delay(50).springify()}
-          className="mx-6 mb-6"
-        >
+        <View className="mx-6 mb-6">
           <LinearGradient
             colors={['#0ea5e9', '#0284c7']}
             start={{ x: 0, y: 0 }}
@@ -147,26 +180,28 @@ export default function HomeScreen() {
               </View>
             </View>
           </LinearGradient>
-        </Animated.View>
+        </View>
+
+        {/* Real Test Card */}
+        <View className="px-6">
+          <RealTestCard />
+        </View>
 
         {/* Categories Section */}
         <View className="px-6">
           <Text className="text-xl font-bold text-slate-800 text-right mb-4">
-            קטגוריות
+            תרגול לפי קטגוריה
           </Text>
           
           <View className="flex-row flex-wrap justify-between">
-            {categories.map((category, index) => (
-              <CategoryCard key={category} category={category} index={index} />
+            {categories.map((category) => (
+              <CategoryCard key={category} category={category} />
             ))}
           </View>
         </View>
 
         {/* Quick Tips */}
-        <Animated.View
-          entering={FadeInDown.delay(400).springify()}
-          className="mx-6 mt-4"
-        >
+        <View className="mx-6 mt-4">
           <View className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
             <View className="flex-row items-center mb-2">
               <Ionicons name="bulb" size={20} color="#f59e0b" />
@@ -177,9 +212,8 @@ export default function HomeScreen() {
               נסה לסיים לפחות שלב אחד בכל יום.
             </Text>
           </View>
-        </Animated.View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-

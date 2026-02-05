@@ -143,3 +143,36 @@ export function getRandomQuestions(category: QuestionCategory, count: number = 5
   const shuffled = shuffleArray(allQuestions);
   return shuffled.slice(0, count).map(q => shuffleQuestionOptions(q));
 }
+
+// Get questions for real test simulation (mixed categories and difficulties)
+export function getRealTestQuestions(): Question[] {
+  const questions: Question[] = [];
+  
+  // Distribution: 5 math, 5 verbal, 5 visual, 5 logic = 20 questions
+  // Mix of difficulties: ~30% easy, ~40% medium, ~30% hard
+  const distribution: [QuestionCategory, number, number, number][] = [
+    // [category, easy, medium, hard]
+    ['math', 2, 2, 1],
+    ['verbal', 2, 2, 1],
+    ['visual', 1, 2, 2],
+    ['logic', 1, 2, 2],
+  ];
+
+  distribution.forEach(([category, easyCount, mediumCount, hardCount]) => {
+    const categoryQuestions = questionBanks[category];
+    
+    // Get questions by difficulty
+    const easyQuestions = shuffleArray(categoryQuestions.filter(q => q.difficulty === 'easy')).slice(0, easyCount);
+    const mediumQuestions = shuffleArray(categoryQuestions.filter(q => q.difficulty === 'medium')).slice(0, mediumCount);
+    const hardQuestions = shuffleArray(categoryQuestions.filter(q => q.difficulty === 'hard')).slice(0, hardCount);
+    
+    questions.push(
+      ...easyQuestions.map(q => shuffleQuestionOptions(q)),
+      ...mediumQuestions.map(q => shuffleQuestionOptions(q)),
+      ...hardQuestions.map(q => shuffleQuestionOptions(q))
+    );
+  });
+
+  // Shuffle all questions together (like real test - mixed order)
+  return shuffleArray(questions);
+}
