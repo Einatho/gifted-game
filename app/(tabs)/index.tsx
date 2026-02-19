@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useGameStore } from '@/stores/gameStore';
+import { useAuthStore } from '@/stores/authStore';
 import { CATEGORY_INFO } from '@/utils/constants';
 import { QuestionCategory } from '@/utils/types';
 
@@ -114,7 +116,15 @@ function RealTestCard() {
 
 export default function HomeScreen() {
   const progress = useGameStore((state) => state.progress);
+  const loadFromSupabase = useGameStore((state) => state.loadFromSupabase);
+  const player = useAuthStore((state) => state.player);
   const categories: QuestionCategory[] = ['math', 'verbal', 'visual', 'logic'];
+
+  useEffect(() => {
+    if (player?.id) {
+      loadFromSupabase(player.id);
+    }
+  }, [player?.id]);
 
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
@@ -126,7 +136,7 @@ export default function HomeScreen() {
         {/* Header */}
         <View className="px-6 pt-4 pb-6">
           <Text className="text-3xl font-bold text-slate-800 text-right">
-            מבחן מחוננים 🌟
+            {player ? `היי ${player.name}! 🌟` : 'מבחן מחוננים 🌟'}
           </Text>
           <Text className="text-slate-500 text-right mt-1">
             בוא נתאמן ונצליח!

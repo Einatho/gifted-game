@@ -1,7 +1,9 @@
 import { View, Text, ScrollView, TouchableOpacity, Switch, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useGameStore } from '@/stores/gameStore';
+import { useAuthStore } from '@/stores/authStore';
 import { INITIAL_PROGRESS } from '@/utils/constants';
 import { UserProgress } from '@/utils/types';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
@@ -50,6 +52,23 @@ export default function SettingsScreen() {
   
   const updateProgress = useGameStore((state) => state.updateProgress);
   const progress = useGameStore((state) => state.progress);
+  const player = useAuthStore((state) => state.player);
+  const signOut = useAuthStore((state) => state.signOut);
+
+  const handleSignOut = () => {
+    Alert.alert(
+      'יציאה',
+      'האם אתה בטוח שברצונך לצאת?',
+      [
+        { text: 'ביטול', style: 'cancel' },
+        {
+          text: 'יציאה',
+          style: 'destructive',
+          onPress: () => signOut(),
+        },
+      ]
+    );
+  };
 
   const handleResetProgress = () => {
     Alert.alert(
@@ -88,6 +107,39 @@ export default function SettingsScreen() {
             התאם את המשחק לצרכים שלך
           </Text>
         </Animated.View>
+
+        {/* Player Profile */}
+        {player && (
+          <Animated.View
+            entering={FadeInDown.delay(50).springify()}
+            className="mx-6 mb-6"
+          >
+            <LinearGradient
+              colors={['#6366f1', '#4f46e5']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              className="rounded-2xl p-5"
+            >
+              <View className="flex-row items-center justify-between">
+                <TouchableOpacity
+                  onPress={handleSignOut}
+                  className="bg-white/20 rounded-xl px-4 py-2"
+                >
+                  <Text className="text-white text-sm font-medium">יציאה</Text>
+                </TouchableOpacity>
+                <View className="flex-row items-center">
+                  <View className="mr-3">
+                    <Text className="text-white text-lg font-bold text-right">{player.name}</Text>
+                    <Text className="text-white/70 text-xs text-right">שחקן רשום ☁️</Text>
+                  </View>
+                  <View className="bg-white/20 w-14 h-14 rounded-2xl items-center justify-center">
+                    <Ionicons name="person" size={28} color="white" />
+                  </View>
+                </View>
+              </View>
+            </LinearGradient>
+          </Animated.View>
+        )}
 
         {/* Sound & Feedback Section */}
         <Animated.View

@@ -10,35 +10,34 @@ import {
   Achievement,
 } from '@/utils/types';
 import { INITIAL_PROGRESS, SCORING, ACHIEVEMENTS, LEVEL_CONFIGS } from '@/utils/constants';
+import { supabase } from '@/utils/supabase';
 
 interface GameStore {
-  // User Progress
   progress: UserProgress;
-  
-  // Current Game Session
+
   currentCategory: QuestionCategory | null;
   currentLevel: number;
   currentQuestions: Question[];
   currentQuestionIndex: number;
   gameState: GameState;
-  
-  // Actions - Progress
+
   updateProgress: (update: Partial<UserProgress>) => void;
   addPoints: (points: number) => void;
   addStars: (stars: number) => void;
   unlockLevel: (category: QuestionCategory, level: number) => void;
   unlockAchievement: (achievementId: string) => void;
   checkAchievements: () => void;
-  
-  // Actions - Game Session
+
   startGame: (category: QuestionCategory, level: number, questions: Question[]) => void;
   answerQuestion: (selectedAnswer: number, timeSpent: number) => { isCorrect: boolean; pointsEarned: number; starsEarned: number };
   nextQuestion: () => void;
   endGame: () => { totalPoints: number; totalStars: number; accuracy: number };
   resetGame: () => void;
-  
-  // Actions - Daily Challenge
+
   updateDailyStreak: () => void;
+
+  syncToSupabase: () => Promise<void>;
+  loadFromSupabase: (playerId: string) => Promise<void>;
 }
 
 const calculateStars = (timeSpent: number, timeLimit: number): number => {
@@ -51,23 +50,29 @@ const calculateStars = (timeSpent: number, timeLimit: number): number => {
 const calculatePoints = (basePoints: number, timeSpent: number, timeLimit: number, streakCount: number): number => {
   const timeRatio = 1 - (timeSpent / timeLimit);
   let points = basePoints;
-  
-  // Time bonus
+
   if (timeRatio >= SCORING.TIME_BONUS_THRESHOLD) {
     points *= SCORING.TIME_BONUS_MULTIPLIER;
   }
-  
-  // Streak bonus
+
   const streakBonus = Math.min(streakCount * SCORING.STREAK_BONUS, SCORING.MAX_STREAK_BONUS);
   points += streakBonus;
-  
+
   return Math.round(points);
 };
+
+let syncTimeout: ReturnType<typeof setTimeout> | null = null;
+
+function debouncedSync(syncFn: () => Promise<void>) {
+  if (syncTimeout) clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(() => {
+    syncFn().catch(console.warn);
+  }, 2000);
+}
 
 export const useGameStore = create<GameStore>()(
   persist(
     (set, get) => ({
-      // Initial State
       progress: INITIAL_PROGRESS as UserProgress,
       currentCategory: null,
       currentLevel: 1,
@@ -81,77 +86,141 @@ export const useGameStore = create<GameStore>()(
         answers: [],
         isComplete: false,
       },
-      
-      // Progress Actions
-      updateProgress: (update) => set((state) => ({
-        progress: { ...state.progress, ...update },
-      })),
-      
-      addPoints: (points) => set((state) => ({
-        progress: {
-          ...state.progress,
-          totalPoints: state.progress.totalPoints + points,
-        },
-      })),
-      
-      addStars: (stars) => set((state) => ({
-        progress: {
-          ...state.progress,
-          totalStars: state.progress.totalStars + stars,
-        },
-      })),
-      
-      unlockLevel: (category, level) => set((state) => {
-        const categoryProgress = state.progress.categoryProgress[category];
-        if (categoryProgress.unlockedLevels.includes(level)) return state;
-        
-        return {
+
+      syncToSupabase: async () => {
+        try {
+          const authData = await AsyncStorage.getItem('gifted-game-auth');
+          if (!authData) return;
+          const { state } = JSON.parse(authData);
+          const playerId = state?.player?.id;
+          if (!playerId) return;
+
+          const { progress } = get();
+          await supabase.from('player_progress').upsert({
+            player_id: playerId,
+            total_points: progress.totalPoints,
+            total_stars: progress.totalStars,
+            questions_answered: progress.questionsAnswered,
+            correct_answers: progress.correctAnswers,
+            category_progress: progress.categoryProgress,
+            achievements: progress.achievements,
+            daily_challenge_streak: progress.dailyChallengeStreak,
+            last_played_date: progress.lastPlayedDate,
+          }, { onConflict: 'player_id' });
+        } catch (e) {
+          console.warn('Failed to sync progress to Supabase:', e);
+        }
+      },
+
+      loadFromSupabase: async (playerId: string) => {
+        try {
+          const { data, error } = await supabase
+            .from('player_progress')
+            .select('*')
+            .eq('player_id', playerId)
+            .single();
+
+          if (error || !data) return;
+
+          set({
+            progress: {
+              totalPoints: data.total_points ?? 0,
+              totalStars: data.total_stars ?? 0,
+              questionsAnswered: data.questions_answered ?? 0,
+              correctAnswers: data.correct_answers ?? 0,
+              categoryProgress: data.category_progress ?? INITIAL_PROGRESS.categoryProgress,
+              achievements: data.achievements ?? [],
+              dailyChallengeStreak: data.daily_challenge_streak ?? 0,
+              lastPlayedDate: data.last_played_date ?? '',
+            },
+          });
+        } catch (e) {
+          console.warn('Failed to load progress from Supabase:', e);
+        }
+      },
+
+      updateProgress: (update) => {
+        set((state) => ({
+          progress: { ...state.progress, ...update },
+        }));
+        debouncedSync(get().syncToSupabase);
+      },
+
+      addPoints: (points) => {
+        set((state) => ({
           progress: {
             ...state.progress,
-            categoryProgress: {
-              ...state.progress.categoryProgress,
-              [category]: {
-                ...categoryProgress,
-                unlockedLevels: [...categoryProgress.unlockedLevels, level],
+            totalPoints: state.progress.totalPoints + points,
+          },
+        }));
+        debouncedSync(get().syncToSupabase);
+      },
+
+      addStars: (stars) => {
+        set((state) => ({
+          progress: {
+            ...state.progress,
+            totalStars: state.progress.totalStars + stars,
+          },
+        }));
+        debouncedSync(get().syncToSupabase);
+      },
+
+      unlockLevel: (category, level) => {
+        set((state) => {
+          const categoryProgress = state.progress.categoryProgress[category];
+          if (categoryProgress.unlockedLevels.includes(level)) return state;
+
+          return {
+            progress: {
+              ...state.progress,
+              categoryProgress: {
+                ...state.progress.categoryProgress,
+                [category]: {
+                  ...categoryProgress,
+                  unlockedLevels: [...categoryProgress.unlockedLevels, level],
+                },
               },
             },
-          },
-        };
-      }),
-      
-      unlockAchievement: (achievementId) => set((state) => {
-        const existingAchievement = state.progress.achievements.find(a => a.id === achievementId);
-        if (existingAchievement?.unlockedAt) return state;
-        
-        const achievementDef = ACHIEVEMENTS.find(a => a.id === achievementId);
-        if (!achievementDef) return state;
-        
-        const newAchievement: Achievement = {
-          ...achievementDef,
-          unlockedAt: new Date().toISOString(),
-        };
-        
-        return {
-          progress: {
-            ...state.progress,
-            achievements: [
-              ...state.progress.achievements.filter(a => a.id !== achievementId),
-              newAchievement,
-            ],
-          },
-        };
-      }),
-      
+          };
+        });
+        debouncedSync(get().syncToSupabase);
+      },
+
+      unlockAchievement: (achievementId) => {
+        set((state) => {
+          const existingAchievement = state.progress.achievements.find(a => a.id === achievementId);
+          if (existingAchievement?.unlockedAt) return state;
+
+          const achievementDef = ACHIEVEMENTS.find(a => a.id === achievementId);
+          if (!achievementDef) return state;
+
+          const newAchievement: Achievement = {
+            ...achievementDef,
+            unlockedAt: new Date().toISOString(),
+          };
+
+          return {
+            progress: {
+              ...state.progress,
+              achievements: [
+                ...state.progress.achievements.filter(a => a.id !== achievementId),
+                newAchievement,
+              ],
+            },
+          };
+        });
+        debouncedSync(get().syncToSupabase);
+      },
+
       checkAchievements: () => {
         const state = get();
         const { progress } = state;
-        
-        // First Steps
+
         if (progress.correctAnswers >= 1) {
           get().unlockAchievement('first_steps');
         }
-        
-        // Category masters
+
         if (progress.categoryProgress.math.correctAnswers >= 10) {
           get().unlockAchievement('math_master_10');
         }
@@ -164,19 +233,16 @@ export const useGameStore = create<GameStore>()(
         if (progress.categoryProgress.logic.correctAnswers >= 10) {
           get().unlockAchievement('logic_master_10');
         }
-        
-        // Star collector
+
         if (progress.totalStars >= 50) {
           get().unlockAchievement('star_collector_50');
         }
-        
-        // Daily streak
+
         if (progress.dailyChallengeStreak >= 7) {
           get().unlockAchievement('daily_streak_7');
         }
       },
-      
-      // Game Session Actions
+
       startGame: (category, level, questions) => set({
         currentCategory: category,
         currentLevel: level,
@@ -191,28 +257,27 @@ export const useGameStore = create<GameStore>()(
           isComplete: false,
         },
       }),
-      
+
       answerQuestion: (selectedAnswer, timeSpent) => {
         const state = get();
         const currentQuestion = state.currentQuestions[state.currentQuestionIndex];
-        
+
         if (!currentQuestion) {
           return { isCorrect: false, pointsEarned: 0, starsEarned: 0 };
         }
-        
+
         const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
         const starsEarned = isCorrect ? calculateStars(timeSpent, currentQuestion.timeLimit) : 0;
-        
-        // Calculate streak
+
         const recentAnswers = state.gameState.answers.slice(-4);
-        const streakCount = isCorrect 
+        const streakCount = isCorrect
           ? recentAnswers.filter(a => a.isCorrect).length + 1
           : 0;
-        
-        const pointsEarned = isCorrect 
+
+        const pointsEarned = isCorrect
           ? calculatePoints(currentQuestion.points, timeSpent, currentQuestion.timeLimit, streakCount)
           : 0;
-        
+
         const answerRecord: AnswerRecord = {
           questionId: currentQuestion.id,
           selectedAnswer,
@@ -221,7 +286,7 @@ export const useGameStore = create<GameStore>()(
           pointsEarned,
           starsEarned,
         };
-        
+
         set((state) => ({
           gameState: {
             ...state.gameState,
@@ -246,17 +311,17 @@ export const useGameStore = create<GameStore>()(
             } : state.progress.categoryProgress,
           },
         }));
-        
-        // Check achievements after answering
+
         get().checkAchievements();
-        
+        debouncedSync(get().syncToSupabase);
+
         return { isCorrect, pointsEarned, starsEarned };
       },
-      
+
       nextQuestion: () => set((state) => {
         const nextIndex = state.currentQuestionIndex + 1;
         const isComplete = nextIndex >= state.currentQuestions.length;
-        
+
         return {
           currentQuestionIndex: nextIndex,
           gameState: {
@@ -266,16 +331,15 @@ export const useGameStore = create<GameStore>()(
           },
         };
       }),
-      
+
       endGame: () => {
         const state = get();
         const { gameState, currentCategory, currentLevel, progress } = state;
-        
+
         const accuracy = gameState.answers.length > 0
           ? gameState.answers.filter(a => a.isCorrect).length / gameState.answers.length
           : 0;
-        
-        // Check for level completion and unlock next level
+
         if (accuracy >= 0.7 && currentCategory && currentLevel < 10) {
           const nextLevel = currentLevel + 1;
           const levelConfig = LEVEL_CONFIGS[nextLevel - 1];
@@ -283,13 +347,11 @@ export const useGameStore = create<GameStore>()(
             get().unlockLevel(currentCategory, nextLevel);
           }
         }
-        
-        // Check for perfect score achievement
+
         if (accuracy === 1) {
           get().unlockAchievement('perfect_level');
         }
-        
-        // Update best score
+
         if (currentCategory) {
           const categoryProgress = progress.categoryProgress[currentCategory];
           if (gameState.score > categoryProgress.bestScore) {
@@ -307,14 +369,16 @@ export const useGameStore = create<GameStore>()(
             }));
           }
         }
-        
+
+        get().syncToSupabase().catch(console.warn);
+
         return {
           totalPoints: gameState.score,
           totalStars: gameState.stars,
           accuracy,
         };
       },
-      
+
       resetGame: () => set({
         currentCategory: null,
         currentLevel: 1,
@@ -329,25 +393,28 @@ export const useGameStore = create<GameStore>()(
           isComplete: false,
         },
       }),
-      
-      updateDailyStreak: () => set((state) => {
-        const today = new Date().toDateString();
-        const lastPlayed = state.progress.lastPlayedDate;
-        
-        if (lastPlayed === today) return state;
-        
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const wasYesterday = lastPlayed === yesterday.toDateString();
-        
-        return {
-          progress: {
-            ...state.progress,
-            dailyChallengeStreak: wasYesterday ? state.progress.dailyChallengeStreak + 1 : 1,
-            lastPlayedDate: today,
-          },
-        };
-      }),
+
+      updateDailyStreak: () => {
+        set((state) => {
+          const today = new Date().toDateString();
+          const lastPlayed = state.progress.lastPlayedDate;
+
+          if (lastPlayed === today) return state;
+
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          const wasYesterday = lastPlayed === yesterday.toDateString();
+
+          return {
+            progress: {
+              ...state.progress,
+              dailyChallengeStreak: wasYesterday ? state.progress.dailyChallengeStreak + 1 : 1,
+              lastPlayedDate: today,
+            },
+          };
+        });
+        debouncedSync(get().syncToSupabase);
+      },
     }),
     {
       name: 'gifted-game-storage',
@@ -356,5 +423,3 @@ export const useGameStore = create<GameStore>()(
     }
   )
 );
-
-
