@@ -109,3 +109,4 @@ export default function Timer({ duration, onTimeUp, isPaused, color }: TimerProp
   );
 }
 
+

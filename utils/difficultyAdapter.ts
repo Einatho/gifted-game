@@ -144,3 +144,4 @@ export function getEncouragementMessage(accuracy: number, isHebrew: boolean = tr
   return 'Don\'t give up! 🌈 Practice makes perfect!';
 }
 
+
