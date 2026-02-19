@@ -33,6 +33,19 @@ export const useAuthStore = create<AuthStore>()(
             return { success: false, error: 'נא להזין שם' };
           }
 
+          // Check if a player with this name already exists
+          const { data: existing } = await supabase
+            .from('players')
+            .select()
+            .eq('name', trimmed)
+            .maybeSingle();
+
+          if (existing) {
+            set({ player: existing, isLoading: false });
+            return { success: true };
+          }
+
+          // New player — create record
           const { data, error } = await supabase
             .from('players')
             .insert({ name: trimmed })
@@ -44,7 +57,6 @@ export const useAuthStore = create<AuthStore>()(
             return { success: false, error: error.message };
           }
 
-          // Create initial progress record
           await supabase.from('player_progress').insert({
             player_id: data.id,
             category_progress: {

@@ -51,7 +51,7 @@ export default function SignInScreen() {
               ?מה השם שלך
             </Text>
             <Text className="text-slate-500 text-sm text-right mb-5">
-              הכנס את השם שלך כדי להתחיל
+              הכנס את השם שלך כדי להתחיל או לחזור לחשבון קיים
             </Text>
 
             <View className="flex-row items-center bg-slate-100 rounded-2xl px-4 py-3 mb-4">

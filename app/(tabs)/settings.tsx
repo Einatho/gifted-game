@@ -64,7 +64,10 @@ export default function SettingsScreen() {
         {
           text: 'יציאה',
           style: 'destructive',
-          onPress: () => signOut(),
+          onPress: () => {
+            updateProgress(INITIAL_PROGRESS as UserProgress);
+            signOut();
+          },
         },
       ]
     );
