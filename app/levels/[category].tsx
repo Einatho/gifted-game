@@ -197,8 +197,8 @@ export default function LevelsScreen() {
               <Text className="text-amber-800 font-bold text-right flex-1 mr-2">טיפ</Text>
             </View>
             <Text className="text-amber-700 text-right text-sm">
-              נסה לענות מהר כדי לקבל 3 כוכבים על כל שאלה!
-              ככל שהשלב גבוה יותר, השאלות קשות יותר.
+              קח את הזמן וחשוב טוב לפני שאתה עונה!
+              בכל שלב שאלות חדשות מחכות לך.
             </Text>
           </View>
         </View>
