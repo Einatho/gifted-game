@@ -12,7 +12,6 @@ import MathQuestion from '@/components/questions/MathQuestion';
 import VerbalQuestion from '@/components/questions/VerbalQuestion';
 import VisualQuestion from '@/components/questions/VisualQuestion';
 import LogicQuestion from '@/components/questions/LogicQuestion';
-import Timer from '@/components/game/Timer';
 
 // Safe haptics helper for web compatibility
 const triggerHaptic = async (type: 'success' | 'error') => {
@@ -97,12 +96,6 @@ export default function GameScreen() {
       setQuestionStartTime(Date.now());
     }, 1500);
   }, [showFeedback, questionStartTime, answerQuestion, nextQuestion]);
-
-  const handleTimeUp = useCallback(() => {
-    if (!showFeedback) {
-      handleAnswer(-1); // Wrong answer if time runs out
-    }
-  }, [showFeedback, handleAnswer]);
 
   const handleExit = () => {
     router.back();
@@ -204,21 +197,12 @@ export default function GameScreen() {
           </View>
         </View>
 
-        {/* Score & Timer */}
-        <View className="flex-row items-center justify-between">
+        {/* Score */}
+        <View className="flex-row items-center justify-center gap-6">
           <View className="flex-row items-center">
             <Ionicons name="star" size={18} color="#fbbf24" />
             <Text className="text-slate-700 font-bold mr-1">{gameState.stars}</Text>
           </View>
-          
-          {currentQuestion && (
-            <Timer
-              duration={currentQuestion.timeLimit}
-              onTimeUp={handleTimeUp}
-              isPaused={isPaused || showFeedback}
-              color={info.color}
-            />
-          )}
           
           <View className="flex-row items-center">
             <Ionicons name="trophy" size={18} color="#0ea5e9" />

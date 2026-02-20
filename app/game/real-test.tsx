@@ -12,7 +12,6 @@ import MathQuestion from '@/components/questions/MathQuestion';
 import VerbalQuestion from '@/components/questions/VerbalQuestion';
 import VisualQuestion from '@/components/questions/VisualQuestion';
 import LogicQuestion from '@/components/questions/LogicQuestion';
-import Timer from '@/components/game/Timer';
 
 // Safe haptics helper for web compatibility
 const triggerHaptic = async (type: 'success' | 'error') => {
@@ -51,19 +50,12 @@ export default function RealTestScreen() {
 
   const currentQuestion = questions[currentIndex];
 
-  const calculateStars = (timeSpent: number, timeLimit: number): number => {
-    const timeRatio = 1 - (timeSpent / timeLimit);
-    if (timeRatio >= 0.8) return 3;
-    if (timeRatio >= 0.5) return 2;
-    return 1;
-  };
-
   const handleAnswer = useCallback((selectedAnswer: number) => {
     if (showFeedback || !currentQuestion) return;
 
     const timeSpent = (Date.now() - questionStartTime) / 1000;
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-    const earnedStars = isCorrect ? calculateStars(timeSpent, currentQuestion.timeLimit) : 0;
+    const earnedStars = isCorrect ? 3 : 0;
     const earnedPoints = isCorrect ? currentQuestion.points : 0;
     
     setLastResult({ isCorrect, stars: earnedStars });
@@ -92,11 +84,6 @@ export default function RealTestScreen() {
     }, 1500);
   }, [showFeedback, questionStartTime, currentQuestion, currentIndex, questions.length]);
 
-  const handleTimeUp = useCallback(() => {
-    if (!showFeedback) {
-      handleAnswer(-1); // Wrong answer if time runs out
-    }
-  }, [showFeedback, handleAnswer]);
 
   const handleExit = () => {
     router.back();
@@ -283,21 +270,12 @@ export default function RealTestScreen() {
           </View>
         </View>
 
-        {/* Score & Timer */}
-        <View className="flex-row items-center justify-between">
+        {/* Score */}
+        <View className="flex-row items-center justify-center gap-6">
           <View className="flex-row items-center">
             <Ionicons name="star" size={18} color="#fbbf24" />
             <Text className="text-slate-700 font-bold mr-1">{stars}</Text>
           </View>
-          
-          {currentQuestion && (
-            <Timer
-              duration={currentQuestion.timeLimit}
-              onTimeUp={handleTimeUp}
-              isPaused={isPaused || showFeedback}
-              color="#ec4899"
-            />
-          )}
           
           <View className="flex-row items-center">
             <Ionicons name="trophy" size={18} color="#0ea5e9" />

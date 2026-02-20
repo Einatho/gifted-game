@@ -40,24 +40,14 @@ interface GameStore {
   loadFromSupabase: (playerId: string) => Promise<void>;
 }
 
-const calculateStars = (timeSpent: number, timeLimit: number): number => {
-  const timeRatio = 1 - (timeSpent / timeLimit);
-  if (timeRatio >= SCORING.STARS.THREE_STAR_THRESHOLD) return 3;
-  if (timeRatio >= SCORING.STARS.TWO_STAR_THRESHOLD) return 2;
-  return 1;
+const calculateStars = (): number => {
+  return 3;
 };
 
-const calculatePoints = (basePoints: number, timeSpent: number, timeLimit: number, streakCount: number): number => {
-  const timeRatio = 1 - (timeSpent / timeLimit);
+const calculatePoints = (basePoints: number, streakCount: number): number => {
   let points = basePoints;
-
-  if (timeRatio >= SCORING.TIME_BONUS_THRESHOLD) {
-    points *= SCORING.TIME_BONUS_MULTIPLIER;
-  }
-
   const streakBonus = Math.min(streakCount * SCORING.STREAK_BONUS, SCORING.MAX_STREAK_BONUS);
   points += streakBonus;
-
   return Math.round(points);
 };
 
@@ -252,7 +242,7 @@ export const useGameStore = create<GameStore>()(
           currentQuestion: 0,
           score: 0,
           stars: 0,
-          timeRemaining: LEVEL_CONFIGS[level - 1]?.timeLimit || 60,
+          timeRemaining: 0,
           answers: [],
           isComplete: false,
         },
@@ -267,7 +257,7 @@ export const useGameStore = create<GameStore>()(
         }
 
         const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-        const starsEarned = isCorrect ? calculateStars(timeSpent, currentQuestion.timeLimit) : 0;
+        const starsEarned = isCorrect ? calculateStars() : 0;
 
         const recentAnswers = state.gameState.answers.slice(-4);
         const streakCount = isCorrect
@@ -275,7 +265,7 @@ export const useGameStore = create<GameStore>()(
           : 0;
 
         const pointsEarned = isCorrect
-          ? calculatePoints(currentQuestion.points, timeSpent, currentQuestion.timeLimit, streakCount)
+          ? calculatePoints(currentQuestion.points, streakCount)
           : 0;
 
         const answerRecord: AnswerRecord = {
