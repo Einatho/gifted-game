@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Switch, Alert } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Switch, Alert, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -8,6 +8,19 @@ import { INITIAL_PROGRESS } from '@/utils/constants';
 import { UserProgress } from '@/utils/types';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
 import { useState } from 'react';
+
+function confirm(title: string, message: string, onConfirm: () => void) {
+  if (Platform.OS === 'web') {
+    if (window.confirm(`${title}\n${message}`)) {
+      onConfirm();
+    }
+  } else {
+    Alert.alert(title, message, [
+      { text: 'ביטול', style: 'cancel' },
+      { text: 'אישור', style: 'destructive', onPress: onConfirm },
+    ]);
+  }
+}
 
 type SettingItemProps = {
   icon: keyof typeof Ionicons.glyphMap;
@@ -56,39 +69,16 @@ export default function SettingsScreen() {
   const signOut = useAuthStore((state) => state.signOut);
 
   const handleSignOut = () => {
-    Alert.alert(
-      'יציאה',
-      'האם אתה בטוח שברצונך לצאת?',
-      [
-        { text: 'ביטול', style: 'cancel' },
-        {
-          text: 'יציאה',
-          style: 'destructive',
-          onPress: () => {
-            updateProgress(INITIAL_PROGRESS as UserProgress);
-            signOut();
-          },
-        },
-      ]
-    );
+    confirm('יציאה', 'האם אתה בטוח שברצונך לצאת?', () => {
+      updateProgress(INITIAL_PROGRESS as UserProgress);
+      signOut();
+    });
   };
 
   const handleResetProgress = () => {
-    Alert.alert(
-      'איפוס התקדמות',
-      'האם אתה בטוח שברצונך לאפס את כל ההתקדמות? פעולה זו בלתי הפיכה.',
-      [
-        { text: 'ביטול', style: 'cancel' },
-        { 
-          text: 'איפוס', 
-          style: 'destructive',
-          onPress: () => {
-            updateProgress(INITIAL_PROGRESS as UserProgress);
-            Alert.alert('בוצע', 'ההתקדמות אופסה בהצלחה');
-          }
-        },
-      ]
-    );
+    confirm('איפוס התקדמות', 'האם אתה בטוח שברצונך לאפס את כל ההתקדמות? פעולה זו בלתי הפיכה.', () => {
+      updateProgress(INITIAL_PROGRESS as UserProgress);
+    });
   };
 
   return (
@@ -293,6 +283,23 @@ export default function SettingsScreen() {
             </Text>
           </View>
         </Animated.View>
+
+        {/* Sign Out Button */}
+        {player && (
+          <Animated.View
+            entering={FadeInDown.delay(700).springify()}
+            className="mx-6 mt-6"
+          >
+            <TouchableOpacity
+              onPress={handleSignOut}
+              activeOpacity={0.8}
+              className="bg-red-500 rounded-2xl py-4 items-center flex-row justify-center"
+            >
+              <Text className="text-white text-lg font-bold mr-2">התנתק</Text>
+              <Ionicons name="log-out-outline" size={22} color="white" />
+            </TouchableOpacity>
+          </Animated.View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
